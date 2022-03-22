@@ -2,36 +2,45 @@
 
 Welcome to the the *RESTify Experiment*.
 
- * By participating in this study you play an active and important part in cutting edge research and I already thank you for your time and dedication.
- * The tasks awaiting you in this experiment are straightforward, but it is essential that you accuratley follow the instructions as closely as possible. I recommend you leave this page open as orientation you proceed.
-
- * If at any point you have any ethical doubt or question, please contact McGill's *Research Ethics Board* and report your concerns. The reference number for this study is: ```123```
-
- * For any technical problem or question, do not hesitate to reach out to me, [the primary investigator](mailto:maximilian.schiedermeier@mcgill.ca).
+ * By participating in this study you actively support research, just for that I already would like to thank you!
+ * You will be completely anonymous to anyone outside the study. For any ethical concerns or questions, please contact [McGill's *Research Ethics Board*](mailto:lynda.mcneil@mcgill.ca). The study reference is:  
+```REB-21-03-009```
+ * Two exciting and straightforward engineering tasks await you. However, be aware that:  
+You have to **exactly** follow the individual task instructions.  
+You must document your activity. 
+ * For any technical concern, please contact the [principal investigator](mailto:maximilian.schiedermeier@mcgill.ca).
 
 ## Before you begin
 
- Please start with the [*Preliminary Tasks*](...). Here we verify that you have all software installed and ready to use that is required for the actual experiment tasks.  
-Since time to task completion is itself a metric, it is important that you have all required tools at hands before you continue.  
-In this section I will also provide you the programmatic skills required for task completion.
+Time itself is a primary metric in this study. Before you tackle the two main tasks, please [run through all preliminary tasks](preliminaries). This will ensure that:
+
+ * All required software is ready to use on your system.
+ * You obtained the skills required for task completion.
+
+ > **Belated installation of required software renders your data worthless to the experiment!!**
 
 ## Your main tasks
 
-Two principal engineering tasks await you in this experiment. It is **absolutely inevitable** that you solve these tasks:
+Your task is to convert two legacy java programs into RESTful services. Everything you need for these tasks [is provided](preliminaries).
 
- * In the requested order
- * With the requested tool
+However, it is **absolutely inevitable** that you solve these tasks:
 
-Order and tool vary from participant to participant. Please consult below table to determine which task to start with and which tool to apply per task.
+ * In the requested order - you must begin by RESTifying the right application (bookstore/xox)
+ * With the requested tool - you must begin with the requested approach (manual/tool-assisted)
+
+ > **If you change task order, context or approach, your data is worthless to the experiment!**
+
+This table tells you which task to begin with, which tool to use and which application to RESTify:
 
 
-| | Red | Green | Yellow | Blue |
+| Group | Red | Green | Yellow | Blue |
 |---|---|---|---|---|
-| Task A | BookStore, TouchCORE | ... | ... | ... |
-| Task B | ... | ... | ... | ... |
+| Task A | BookStore, TouchCORE | BookStore, Manually | Xox, TouchCORE | Xox, Manually |
+| Task B | Xox, Manually | Xox, TouchCORE | BookStore, Manually | BookStore, TouchCORE |
 
+ > **Example**: Alice is in the *Green* group. She begins by converting Xox into a RESTful application using TouchCORE. Afterwards she manually converts the BookStore into a RESTful application, using her preferred IDE.
 
 ## After completion
 
-Finally you have to submit your work to a provided server space. Detailed instructions and a checklist are here. Once your material is confirmed you will receive your gift card per email.
+Once completed you must provide all collected data to the PI. Follow the [upload instructions](upload), the PI then emails you an Amazon gift card.
 
