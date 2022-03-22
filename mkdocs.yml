@@ -1,0 +1,17 @@
+site_name: McGill CS RESTify Experiment
+site_url: https://www.cs.mcgill.ca/~mschie3/restify
+nav:
+    - Welcome: index.md
+    - Preliminaries: preliminaries.md
+    - Task Material: material.md
+    - Upload: submit.md
+theme:
+  name: material
+  logo: assets/logo.png
+  palette:
+    scheme: mcgill
+    accent: red
+  custom_dir: overrides
+extra_css:
+    - stylesheets/extra.css
+
