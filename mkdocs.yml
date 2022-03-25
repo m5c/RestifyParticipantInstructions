@@ -4,7 +4,7 @@ nav:
     - Welcome: index.md
     - Preliminaries: preliminaries.md
     - Task Material: material.md
-    - Upload: submit.md
+    - Upload: upload.md
 theme:
   name: material
   logo: assets/logo.png
