@@ -30,8 +30,13 @@ You need the build tool maven.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [UPDATE LINK HERE](...)
-  * Verify you can start it with: ```java -jar TouchCORE.jar```
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/TouchCORE-restify.jar)
+
+ > You can not use an older version of TouchCORE. The required features are only contained in the above version.
+
+ * Verify you can start it with: ```java -jar TouchCORE.jar```  
+You should see this:  
+![touchcore-start](captures/touchcore-start.png)
 
 ### IntelliJ
 
