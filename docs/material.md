@@ -1,9 +1,3 @@
-# WARNING!
-
- > **Start your screen recording now! You must record all task activity, otherwise your data is worthless to the experiment!**
-
-.
-
 # Task Material
 
 This page brings all the material you need for your refactoring tasks.
