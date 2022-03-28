@@ -23,8 +23,6 @@ function deploy
 	zip -r site.zip site
 	scp site.zip mschie3@132.206.51.22:/home/2019/mschie3/public_html
 	ssh mschie3@132.206.51.22 "cd public_html; rm -rf $COLOUR; mkdir -p $COLOUR; unzip -o site.zip; mv site $COLOUR/restify-study"
-	echo uploaded and access granted - location:
-	open https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
 }
 
 # Main logic. Build and deploy all colour-groups.
@@ -34,4 +32,10 @@ for COLOUR in "${COLOURS[@]}"; do
     deploy
 done
 
-
+# Update browser tabs and link location
+echo "Uploaded and access granted - locations:"
+for COLOUR in "${COLOURS[@]}"; do
+        LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
+        echo -e ' \t '-$COLOUR: ' \t '$LOCATION
+        open $LOCATION
+done
