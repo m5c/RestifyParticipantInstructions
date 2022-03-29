@@ -7,6 +7,16 @@ Sources for experiment instructions
  * Start server: ```mkdocs serve```
  * Access docs: [http://127.0.0.1:8000/~mschie3/restify](http://127.0.0.1:8000/~mschie3/restify)
 
+## Internals
+
+Deploy script iterates over colours and for each:
+
+ * Places colour specific css themes to ```docs/stylesheets/extra.css```
+ * Overrides task order in ```index.md```
+ * Overrides ```task1.md``` / ```task2.md``` content.
+ * Builds
+ * Deploys to server
+
 ## Other
 
  * Theme adjustments:
