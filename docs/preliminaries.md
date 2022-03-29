@@ -91,38 +91,10 @@ The Zoo is a little illustration of your upcoming tasks and tools.
        * Compile it with: ```mvn clean package```
        * Start it with: ```java -jar target/zoo-restified.jar```
 
-In the remainder of this section, I'll show you on the example of the Zoo how a legacy java program can be turned into a RESTful service.
-
- * Manually, using an IDE.
- * Semi-automated, using TouchCORE.
-
-  > That's right, I'll show you exaclty what awaits you in your upcoming tasks and how to solve them! Bear with me :)        
-
-### Manual Conversion
- * Whenever lost, you can use this command to see all changes made between the original and the RESTified version of the sample application:  
-```git diff master..RESTified```
-
-
-
-
-
-### Maven
-
 #### Project Layout
 
 #### Project Configuration
 
-#### Changing for Spring Boot
+#### Build and Run
 
-#### Build / Run
-
-### Spring Boot
-
-#### Launcher
-
-#### Beans and Singletons
-
-#### Resource Mapping with Annotations
-
-### Semi-Automated Conversion
 

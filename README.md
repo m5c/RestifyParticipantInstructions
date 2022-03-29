@@ -14,6 +14,12 @@ Deploy script iterates over colours and for each:
  * Places colour specific css themes to ```docs/stylesheets/extra.css```
  * Overrides task order in ```index.md```
  * Overrides ```task1.md``` / ```task2.md``` content.
+   * pipes heading + disclaimer into new task1/2.md file.
+   * Appends task1/2.md file by zoo example for corresponding task, using:
+     * docs/convert-manual-example.md
+     * docs/convert-touchcore-example.md
+     * zoo IF description ?
+   * Appends task1/2.md file by pointer to target app + disclaimer + app IF descr.
  * Builds
  * Deploys to server
 
