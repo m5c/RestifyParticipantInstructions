@@ -1,6 +1,7 @@
 #!/bin/bash
 # rest study deploy script
 # M.Schiedermeier, 2022
+set -x
 
 # | Group / Task | Red | Green | Yellow | Blue |
 # |---|---|---|---|---|
@@ -14,6 +15,7 @@ function build
         cp extra-$COLOUR.css docs/stylesheets/extra.css
 
 	# adapt section order
+        patchTask
 
 	# build locally
 	mkdocs build
@@ -23,7 +25,7 @@ function build
 function patchTask
 {
         # copy template file into place, to erase all traces of previous colours.
-	cp docs/index-template.md index.md
+	cp docs/index-template.md docs/index.md
 
         # Change task description in index file, depending on colour
 	case $COLOUR in
@@ -37,24 +39,18 @@ function patchTask
 	  green )
             TASK1='App: BookStore, Tool: Manual'
             TASK2='App: TicTacToe, Tool: TouchCORE'
-            # 1: App: BookStore, Tool: Manual
-            # 2: App: TicTacToe, Tool: TouchCORE
 	    echo "green matched"
 	    ;;
 
 	  blue )
             TASK1='App: TicTacToe, Tool: TouchCORE'
             TASK2='App: BookStore, Tool: Manual'
-            # 1: App: TicTacToe, Tool: TouchCORE
-            # 2: App: BookStore, Tool: Manual
 	    echo "blue matched"
 	    ;;
 
 	  yellow )
             TASK1='App: TicTacToe, Tool: Manual'
             TASK2='App: BookStore, Tool: TouchCORE'
-            # 1: App: TicTacToe, Tool: Manual
-            # 2: App: BookStore, Tool: TouchCORE
 	    echo "yellow matched"
 	    ;;
 
@@ -63,7 +59,9 @@ function patchTask
 	    ;;
 	esac
 
+
 	# actualy modify content:
+	echo "Patching task order for $COLOUR"
         sed -i '' "s/TASK1/$TASK1/g" docs/index.md
         sed -i '' "s/TASK2/$TASK2/g" docs/index.md
 	
@@ -84,7 +82,6 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
-    patchTask
     deploy
 done
 
