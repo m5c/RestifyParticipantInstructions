@@ -2,6 +2,11 @@
 # rest study deploy script
 # M.Schiedermeier, 2022
 
+# | Group / Task | Red | Green | Yellow | Blue |
+# |---|---|---|---|---|
+# | First | App: BookStore, Tool: TouchCORE | App: BookStore, Tool: Manual | App: TicTacToe, Tool: TouchCORE | App: TicTacToe, Tool: Manual |
+# | Second | App: TicTacToe, Tool: Manual | App: TicTacToe, Tool: TouchCORE | App: BookStore, Tool: Manually | App: BookStore, Tool: TouchCORE |
+
 # Patches the css in docs folder for a given colour
 function build
 {
@@ -12,6 +17,56 @@ function build
 
 	# build locally
 	mkdocs build
+}
+
+# Patches the task page contents (task1/2) and task descriptions on landing page (index)
+function patchTask
+{
+        # copy template file into place, to erase all traces of previous colours.
+	cp docs/index-template.md index.md
+
+        # Change task description in index file, depending on colour
+	case $COLOUR in
+
+	  red )
+            TASK1='App: BookStore, Tool: TouchCORE'
+            TASK2='App: TicTacToe, Tool: Manual'
+	    echo "red matched"
+	    ;;
+
+	  green )
+            TASK1='App: BookStore, Tool: Manual'
+            TASK2='App: TicTacToe, Tool: TouchCORE'
+            # 1: App: BookStore, Tool: Manual
+            # 2: App: TicTacToe, Tool: TouchCORE
+	    echo "green matched"
+	    ;;
+
+	  blue )
+            TASK1='App: TicTacToe, Tool: TouchCORE'
+            TASK2='App: BookStore, Tool: Manual'
+            # 1: App: TicTacToe, Tool: TouchCORE
+            # 2: App: BookStore, Tool: Manual
+	    echo "blue matched"
+	    ;;
+
+	  yellow )
+            TASK1='App: TicTacToe, Tool: Manual'
+            TASK2='App: BookStore, Tool: TouchCORE'
+            # 1: App: TicTacToe, Tool: Manual
+            # 2: App: BookStore, Tool: TouchCORE
+	    echo "yellow matched"
+	    ;;
+
+	  *)
+	    echo "Invalid Colour: $COLOUR"
+	    ;;
+	esac
+
+	# actualy modify content:
+        sed -i '' "s/TASK1/$TASK1/g" docs/index.md
+        sed -i '' "s/TASK2/$TASK2/g" docs/index.md
+	
 }
 
 # deploys one colour group on server
@@ -29,6 +84,7 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
+    patchTask
     deploy
 done
 

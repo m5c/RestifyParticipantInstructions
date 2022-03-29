@@ -3,7 +3,8 @@ site_url: https://www.cs.mcgill.ca/~mschie3/restify
 nav:
     - Welcome: index.md
     - Preliminaries: preliminaries.md
-    - Task Material: material.md
+    - Task 1: task1.md
+    - Task 2: task2.md
     - Upload: upload.md
 theme:
   name: material

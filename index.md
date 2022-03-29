@@ -36,8 +36,8 @@ However, it is **absolutely crucial** that while solving these tasks you respect
 
 Your personal task order is:
 
- 1. [1: App: BookStore, Tool: TouchCORE](task1)
- 2. [2: App: TicTacToe, Tool: Manual](task2)
+ 1. [TASK1](task1)
+ 2. [TASK2](task2)
 
 Please now [proceed to the task material page](material), download the App context and begin your first task, according your column and group colour. Once finished, download the second App context and follow your second task with the complementary tool.
 
