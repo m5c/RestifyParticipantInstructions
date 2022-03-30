@@ -64,37 +64,23 @@ You'll need zoom, to record your task activity.
 
 > **Verify that your *Desktop* recording to file worked. Watch your test recording now!**
 
-## Skills
+## Source Code
 
-Next I will provide you with the basic programming skills required for task completion.
+For the upcoming two tasks you will need prepared source code to work on.  
 
- * Your job will be the conversion of a legacy java program into a RESTful service.
- * Depending on your task description you will either do this:
-    * Manually, using an IDE.
-    * Semi-automated, using TouchCORE.
+ * Prepare a dedicated folder for your tasks, e.g. on your Desktop.
+ * Clone these three repositories, but do not yet inspect their content:
+    * [The Zoo](https://github.com/kartoffelquadrat/Zoo):  
+```git clone https://github.com/kartoffelquadrat/Zoo.git```
+    * [The Book Store](https://github.com/kartoffelquadrat/BookStoreInternals):  
+```git clone https://github.com/kartoffelquadrat/BookStoreInternals.git```
+    * [Tic Tac Toe](https://github.com/kartoffelquadrat/XoxInternals):  
+```git clone https://github.com/kartoffelquadrat/XoxInternals.git```
+ * You should now have three new directories in your study folder:
+ * Finally, **for each** folder, verify you can build the code as is:
+    * Open a terminal / command line in the project folder.
+    * Run: ```mvn clean install```
+    * Verify there are no error messages printed to screen.
 
-No worries, I will now show you everything you need to know, based on a tiny sample program.
-
-### Welcome to the Zoo!
-
-The Zoo is a little illustration of your upcoming tasks and tools.
-
- * Please **now** [clone this sample project](https://github.com/kartoffelquadrat/Zoo):  
-```git clone https://github.com/kartoffelquadrat/Zoo.git```  
- * The repository aready has both versions preparedL
-    * A classic java application:
-       * On branch ```master```: ```git checkout master```
-       * Compile it with: ```mvn clean install```
-       * Start it with: ```java -jar target/zoo.jar```
-    * A restful version:
-       * On branch ```RESTified```: ```git checkout RESTified```
-       * Compile it with: ```mvn clean package```
-       * Start it with: ```java -jar target/zoo-restified.jar```
-
-#### Project Layout
-
-#### Project Configuration
-
-#### Build and Run
-
+ > You are now ready for [your first task](../task1)!
 

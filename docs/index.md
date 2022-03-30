@@ -13,7 +13,7 @@ You must document your activity.
 
 These instructions are linear. Follow the instructions as you read them. Do not alternate the order or skip sections. The experiment is finished, once you have reached the end of this documentation.
 
- > tl;dr: read everything, read it carefully!
+ > tl;dr: read everything, read it carefully! We will verify your upload before compensation.
 
 ## Before you begin
 
@@ -26,22 +26,18 @@ Time itself is a primary metric in this study. Before you start with the two mai
 
 ## Your main tasks
 
-Your task is to convert two legacy java programs into RESTful services.  
-However, it is **absolutely crucial** that while solving these tasks you respect:
+**Upon completion** of [the preliminary tasks](preliminaries), please proceed to the two main tasks.
 
- * The requested order - you must begin by RESTifying the right application.
- * The requested tool - you must begin with the right tool.
+ * It is **absolutely crucial** that you respect task order and details.
+    * Process the tasks in the requested order.
+    * Double check the codebase:  
+Your second task will require you to work on a different application than the first.
+    * Make sure to use the right approach:  
+Your second task will require you to apply a different methodology than the first.
+ *  Record your on screen activity:
+Run a screen recording from the moment you first open the task description until completion.
 
- > **If you change task order, context or approach, your data is worthless to the experiment!**
-
-Your personal task order is:
-
- 1. [App: TicTacToe, Tool: Manual](task1)
- 2. [App: BookStore, Tool: TouchCORE](task2)
-
-Please now [proceed to the task material page](material), download the App context and begin your first task, according your column and group colour. Once finished, download the second App context and follow your second task with the complementary tool.
-
- > **Don't forget to start your screen recording!**
+ > **If you change task order, context or approach, or do not document your activity, your data will be worthless to the experiment!**
 
 ## After completion
 

@@ -1,7 +1,6 @@
 #!/bin/bash
 # rest study deploy script
 # M.Schiedermeier, 2022
-set -x
 
 # | Group / Task | Red | Green | Yellow | Blue |
 # |---|---|---|---|---|
@@ -32,25 +31,41 @@ function patchTask
 
 	  red )
             TASK1='App: BookStore, Tool: TouchCORE'
+            TASK1VERBOSE='Your **first** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.'
             TASK2='App: TicTacToe, Tool: Manual'
+            TASK2VERBOSE='Your **second** task is the **manual** conversion of the **Tic Tac Toe** into a RESTful service.'
+	    METHOD1=touchcore
+	    METHOD2=manual
 	    echo "red matched"
 	    ;;
 
 	  green )
             TASK1='App: BookStore, Tool: Manual'
+            TASK1VERBOSE='Your **first** task is the **manual** conversion of the **Book Store** into a RESTful service.'
             TASK2='App: TicTacToe, Tool: TouchCORE'
+            TASK2VERBOSE='Your **second** task is the **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
+	    METHOD1=manual
+	    METHOD2=touchcore
 	    echo "green matched"
 	    ;;
 
 	  blue )
             TASK1='App: TicTacToe, Tool: TouchCORE'
+            TASK1VERBOSE='Your **first** task is the **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
             TASK2='App: BookStore, Tool: Manual'
+            TASK2VERBOSE='Your **second** task is the **manual** conversion of the **BookStore** into a RESTful service.'
+	    METHOD1=touchcore
+	    METHOD2=manual
 	    echo "blue matched"
 	    ;;
 
 	  yellow )
             TASK1='App: TicTacToe, Tool: Manual'
+            TASK1VERBOSE='Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTful service.'
             TASK2='App: BookStore, Tool: TouchCORE'
+            TASK2VERBOSE='Your **second** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.'
+	    METHOD1=manual
+	    METHOD2=touchcore
 	    echo "yellow matched"
 	    ;;
 
@@ -61,9 +76,18 @@ function patchTask
 
 
 	# actualy modify content:
-	echo "Patching task order for $COLOUR"
-        sed -i '' "s/TASK1/$TASK1/g" docs/index.md
-        sed -i '' "s/TASK2/$TASK2/g" docs/index.md
+#	echo "Patching task order for $COLOUR"
+#        sed -i '' "s/TASK1/$TASK1/g" docs/index.md
+#        sed -i '' "s/TASK2/$TASK2/g" docs/index.md
+
+	# prepare task descriptions contents, based on group colour
+	# task 1 markdown
+	echo '# Task 1' > docs/task1.md
+        echo $TASK1VERBOSE >> docs/task1.md
+
+	# task 1 markdown
+	echo '# Task 2' > docs/task2.md
+        echo $TASK2VERBOSE >> docs/task2.md
 	
 }
 
