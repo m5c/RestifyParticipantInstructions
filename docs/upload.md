@@ -8,7 +8,7 @@ Your personal upload location is [...](...).
 
  * Screen recordings
  * Project folders
- * Comments (please use [this](...) form)
+ * Comments (please use [this](../comments.txt) form)
 
 ## Claim your gift card
 

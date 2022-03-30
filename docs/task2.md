@@ -1,13 +1,14 @@
 # Task 2
 Your **second** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 
-## Structure
 
-The remainder of this page is structured as follows:
+This page is structured as follows:
 
- * A short video to exemplify your task on a demo app, the Zoo.
- * A supportive documentation of the main steps you need to perform.
- * A textual description of the expected interface your solution should implement.
+ * Task description:
+    * Illustrative example of your task on a demo application.
+    * Documentation of the main steps you need to perform.
+ * Expected outcome:
+    * Textual description of the requested REST interface.
 ## TouchCORE assisted converstion to a RESTful service.
 
 Zoo...
