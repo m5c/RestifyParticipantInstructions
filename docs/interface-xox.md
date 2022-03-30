@@ -1,17 +1,3 @@
-# Task 1
-Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTful service.
-
-## Structure
-
-The remainder of this page is structured as follows:
-
- * A short video to exemplify your task on a demo app, the Zoo.
- * A supportive documentation of the main steps you need to perform.
- * A textual description of the expected interface your solution should implement.
-## Manual converstion to a RESTful service.
-
-Zoo...
-
 
 
 ## Interface Description: Tic Tac Toe Resources and Methods

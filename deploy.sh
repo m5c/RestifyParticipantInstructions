@@ -36,6 +36,8 @@ function patchTask
             TASK2VERBOSE='Your **second** task is the **manual** conversion of the **Tic Tac Toe** into a RESTful service.'
 	    METHOD1=touchcore
 	    METHOD2=manual
+            APP1=bookstore
+            APP2=xox
 	    echo "red matched"
 	    ;;
 
@@ -46,6 +48,8 @@ function patchTask
             TASK2VERBOSE='Your **second** task is the **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
 	    METHOD1=manual
 	    METHOD2=touchcore
+            APP1=bookstore
+            APP2=xox
 	    echo "green matched"
 	    ;;
 
@@ -56,6 +60,8 @@ function patchTask
             TASK2VERBOSE='Your **second** task is the **manual** conversion of the **BookStore** into a RESTful service.'
 	    METHOD1=touchcore
 	    METHOD2=manual
+            APP1=xox
+            APP2=bookstore
 	    echo "blue matched"
 	    ;;
 
@@ -66,6 +72,8 @@ function patchTask
             TASK2VERBOSE='Your **second** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.'
 	    METHOD1=manual
 	    METHOD2=touchcore
+            APP1=xox
+            APP2=bookstore
 	    echo "yellow matched"
 	    ;;
 
@@ -84,11 +92,16 @@ function patchTask
 	# task 1 markdown
 	echo '# Task 1' > docs/task1.md
         echo $TASK1VERBOSE >> docs/task1.md
+        cat docs/task-content.md >> docs/task1.md
+        cat docs/zoo-$METHOD1.md >> docs/task1.md
+        cat docs/interface-$APP1.md >> docs/task1.md
 
 	# task 1 markdown
 	echo '# Task 2' > docs/task2.md
         echo $TASK2VERBOSE >> docs/task2.md
-	
+        cat docs/task-content.md >> docs/task2.md
+        cat docs/zoo-$METHOD2.md >> docs/task2.md
+        cat docs/interface-$APP2.md >> docs/task2.md
 }
 
 # deploys one colour group on server
