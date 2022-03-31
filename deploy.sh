@@ -119,14 +119,14 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
-#    deploy
+    deploy
 done
 
 # Update browser tabs and link location
 echo "Uploaded and access granted - locations:"
 echo http://127.0.0.1:8000/~mschie3/restify/
-#for COLOUR in "${COLOURS[@]}"; do
-#        LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
-#        echo -e ' \t '-$COLOUR: ' \t '$LOCATION
-#        open $LOCATION
-#done
+for COLOUR in "${COLOURS[@]}"; do
+        LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
+        echo -e ' \t '-$COLOUR: ' \t '$LOCATION
+        open $LOCATION
+done

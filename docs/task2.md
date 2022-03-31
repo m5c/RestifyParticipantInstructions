@@ -6,8 +6,7 @@ Your **second** task is the **TouchCORE assisted** conversion of the **Book Stor
 ## Task Illustration
 
  * I will now illustrate your upcoming task on a sample application, the **Zoo**.
- * I will show you a methodology to convert the Zoo into a RESTful service.
- * Your task will be to apply the methodology on a different application.
+
 
 
 
