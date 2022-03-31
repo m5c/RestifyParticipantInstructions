@@ -84,9 +84,9 @@ function patchTask
 
 
 	# actualy modify content:
-#	echo "Patching task order for $COLOUR"
-#        sed -i '' "s/TASK1/$TASK1/g" docs/index.md
-#        sed -i '' "s/TASK2/$TASK2/g" docs/index.md
+        cat docs/preliminaries-start.md > docs/preliminaries.md
+        cat docs/interface-zoo.txt >> docs/preliminaries.md
+        cat docs/preliminaries-end.md >> docs/preliminaries.md
 
 	# prepare task descriptions contents, based on group colour
 	# task 1 markdown
@@ -119,14 +119,14 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
-    deploy
+#    deploy
 done
 
 # Update browser tabs and link location
 echo "Uploaded and access granted - locations:"
 echo http://127.0.0.1:8000/~mschie3/restify/
-for COLOUR in "${COLOURS[@]}"; do
-        LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
-        echo -e ' \t '-$COLOUR: ' \t '$LOCATION
-        open $LOCATION
-done
+#for COLOUR in "${COLOURS[@]}"; do
+#        LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
+#        echo -e ' \t '-$COLOUR: ' \t '$LOCATION
+#        open $LOCATION
+#done

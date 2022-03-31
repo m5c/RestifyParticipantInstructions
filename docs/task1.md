@@ -14,10 +14,31 @@ Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTf
 
 
 
-## Manual converstion to a RESTful service
+I will now illustrate the steps of a **manual** conversion to a RESTful service on the example of the Zoo.  
+I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
-Zoo...
+ * Please watch [this short screencast](...) where I demonstrate and explain the required code changes.
+ * Below you additionally find a recapitulation of the main steps.
+ * Additionally you can conveniently inspect both versions and the changes made:
+    * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
+    * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
+    * Compare versions: ```git diff master..RESTified``` or [inspect changes online](https://github.com/kartoffelquadrat/Zoo/commit/8fe7675b65f795897910358ed089ea2a0e22aeff).
 
+### Project Layout Overview
+
+### Build Configuration Changes
+
+#### Build and Run
+
+### Java Code Changes
+
+#### Launcher
+
+#### Beans and Singletons
+
+#### Resource Mapping with Annotations
+
+### Compile / Run / Verify (possibly master template)
 
 
 ## Interface Description: Tic Tac Toe Resources and Methods

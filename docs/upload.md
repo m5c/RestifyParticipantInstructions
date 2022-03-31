@@ -1,13 +1,14 @@
 # Upload
 
-Congratulations, you're almost done!  
-We prepared an upload location for your results. Please make sure you did not miss anything!
-Please use your personal upload link, sent to you by email.
+Congratulations, you're almost done! Last thing to do is to send us your results:
+
+ * We prepared a personal upload location for your results. The link is in our initial email.
+ * Please make not to miss anything in your upload. Below is a checklist.
 
 ## Checklist
 
  * Screen recordings
- * Project folders
+ * Project folders (both tasks)
  * Comments (please use [this](../comments.txt) form)
 
 ## Claim your gift card
