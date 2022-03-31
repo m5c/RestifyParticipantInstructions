@@ -5,9 +5,9 @@ Welcome to the the *RESTify Experiment*.
  * By participating in this study you actively support research, just for that I already would like to thank you!
  * You will be completely anonymous to anyone outside the study. For any ethical concerns or questions, please contact [McGill's *Research Ethics Board*](mailto:lynda.mcneil@mcgill.ca). The study reference is:  
 ```REB-21-03-009```
- * Two exciting and straightforward engineering tasks await you. However, be aware that:  
-You have to **exactly** follow the individual task instructions.  
-You must document your activity. 
+ * Two exciting and straightforward engineering tasks await you. However, be aware that...
+     * ... you must **exactly** follow the individual task instructions.  
+     * ... you must document your activity. 
  * For any technical concern, please contact the [principal investigator](mailto:maximilian.schiedermeier@mcgill.ca).
 
 

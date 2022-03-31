@@ -1,5 +1,5 @@
 # Task 2
-Your **second** task is the**TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
+Your **second** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 
  > **WARNING!** Start your screen recording **now**. Your entire task actvity must be captured. This includes your familiarization with the task description!
 
@@ -15,7 +15,7 @@ Your **second** task is the**TouchCORE assisted** conversion of the **Book Store
 
 
 I will now illustrate the steps of a **TouchCORE assisted** conversion to a RESTful service on the example of the Zoo.  
-I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
+I will use the previously shown [Zoo REST interface description](interface-zoo.txt){:target="\_blank"}.
 
  * Please watch [this short screencast](...) where I demonstrate and explain TouchCORE usage.
  * Below you additionally find a recapitulation of the main steps.
