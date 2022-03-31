@@ -1,9 +1,9 @@
 # Task 1
-Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTful service.
+Your **first** task is the**manual** conversion of **Tic Tac Toe** into a RESTful service.
 
  > **WARNING!** Start your screen recording **now**. Your entire task actvity must be captured. This includes your familiarization with the task description!
 
-## Zoo Task Illustration
+## Task Illustration (Restifying the Zoo)
 
 
 
@@ -20,8 +20,8 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
  * Please watch [this short screencast](...) where I demonstrate and explain the required code changes.
  * Below you additionally find a recapitulation of the main steps.
  * Additionally you can conveniently inspect both versions and the changes made:
-    * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
+    * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
     * Compare versions: ```git diff master..RESTified``` or [inspect changes online](https://github.com/kartoffelquadrat/Zoo/commit/8fe7675b65f795897910358ed089ea2a0e22aeff).
 
 ### Project Layout Overview
@@ -39,9 +39,17 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 #### Resource Mapping with Annotations
 
 ### Compile / Run / Verify (possibly master template)
+## Your Task
+
+Not it is your turn! 
+
+ * The target REST interface description for your task is below.
+ * All you need to do is replicate the above steps.
+ * Please now run a
+**manual** conversion of **Tic Tac Toe** into a RESTful service.
 
 
-## Interface Description: Tic Tac Toe Resources and Methods
+### Interface Description: Tic Tac Toe Resources and Methods
 
  * Your interface should begin with a top-level resource "*xox*", offering two methods.
     * A *[GET]* request to the "*xox*" resource should result in a lookup of all currently running games, as a list of game-identifiers.

@@ -116,3 +116,21 @@ The RESTification of an application (e.g. the Zoo) requires an interface descrip
 
 For example for the Zoo the interface description could look like this:  
 
+ * Your interface should begin with a top-level resource "*zoo*", not offering any methods.
+ * "*bookstore*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
+    * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
+    * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
+ * The "*animals*" resource should have a single dynamic placeholder subresource representing an specific animal, identified by name.
+    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource, service is input parameter.
+    * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
+
+ > Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
+
+There are two ways to achieve this. In each task...
+
+ * ... I'll first walk you through the required steps (using the Zoo).
+ * ... then I'll ask you to convert a different application the same way.
+
+You are now ready for [your first task](../task1)!
+
+

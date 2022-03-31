@@ -1,9 +1,9 @@
 # Task 2
-Your **second** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
+Your **second** task is the**TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 
  > **WARNING!** Start your screen recording **now**. Your entire task actvity must be captured. This includes your familiarization with the task description!
 
-## Zoo Task Illustration
+## Task Illustration (Restifying the Zoo)
 
 
 
@@ -29,9 +29,17 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 ### Code Generation
 
 ### Compile / Run / Verify (possibly master template)
+## Your Task
+
+Not it is your turn! 
+
+ * The target REST interface description for your task is below.
+ * All you need to do is replicate the above steps.
+ * Please now run a
+**TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 
 
-## Interface Description: Book Store Resources and Methods
+### Interface Description: Book Store Resources and Methods
 
 
  * Your interface should begin with a top-level resource "*bookstore*", not offering any methods.  

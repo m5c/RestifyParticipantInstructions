@@ -1,6 +1,6 @@
 
 
-## Interface Description: Tic Tac Toe Resources and Methods
+### Interface Description: Tic Tac Toe Resources and Methods
 
  * Your interface should begin with a top-level resource "*xox*", offering two methods.
     * A *[GET]* request to the "*xox*" resource should result in a lookup of all currently running games, as a list of game-identifiers.
