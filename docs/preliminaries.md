@@ -82,5 +82,53 @@ For the upcoming two tasks you will need prepared source code to work on.
     * Run: ```mvn clean install```
     * Verify there are no error messages printed to screen.
 
- > You are now ready for [your first task](../task1)!
+## Task Illustration
+
+In both of your tasks you will convert an existing java application to a RESTful service. This activity is also called *RESTify* or *RESTification*.  
+
+ * At the start of each task I will provide you with the tools for this process and illustrate the requests activity on a sample application, the **Zoo**.
+ * The remainder of this page is an illustration of your upcoming tasks.
+
+### The Zoo Application
+
+The Zoo is a minimal java desktop application that offers some demo functionality, namely:
+
+ * Looking up the Zoo's opening hours.
+ * Looking up all names of Zoo animals.
+ * Looking up details for a specific animal, identified by name.
+ * Adding a new animal to the Zoo.
+
+The above functionality is all provided by a singleton class: [```Zoo```](https://kartoffelquadrat.github.io/Zoo/eu/kartoffelquadrat/zoo/Zoo.html).  
+
+ * For convenience, here is a class diagram of the ```Zoo``` class:  
+![zoo](../captures/zoo-bl.png)
+ * You can also inspect the [DekstopLauncher](https://github.com/kartoffelquadrat/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java), to see how to invoke above methods.
+ * Finally you can also run the provided Zoo implementation as is, to see a demo of above functionality:
+   * Open a terminal in your cloned Zoo project
+   * Type: ```mvn clean package exec:java```
+
+### The Zoo REST interface description
+
+The RESTification of an application, e.g. the Zoo requires an interface description. An interface description tells you:
+
+ * The expected arrangement of REST resources, and also their individual locations.
+ * Which methods to support per resource, ```Get```, ```Put```, ```Post```, ```Delete```.
+ * What should happen when a method was called on a REST resource, and how to provide parameters.
+
+For example for the Zoo the interface description could look like this:  
+
+ * Your interface should begin with a top-level resource "*zoo*", not offering any methods.
+ * "*bookstore*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
+    * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
+    * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
+ * The "*animals*" resource should have a single dynamic placeholder subresource representing an specific animal, identified by name.
+    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource, service is input parameter.
+    * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
+
+ > Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
+
+There are two ways to achieve this. In each task I'll first walk you through the required steps on the example of the Zoo. Then I'll ask you to convert another application the same way, based on a provided REST interface description.
+
+You are now ready for [your first task](../task1)!
+
 
