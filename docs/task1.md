@@ -39,9 +39,20 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 #### Resource Mapping with Annotations
 
 ### Compile / Run / Verify (possibly master template)
+### Compile and Test
+
+To compile and test your produced REST service:
+
+ * Compile your project with: ```mvn clean package```
+ * Open the newly generated ```target``` folder.
+ * Run the generated JAR file with: ```java -jar YOUR-SERVICE-NAME.jar```
+ * Test access with your browser. You can directly access any *[GET]* resource by typing this into the URL bar:  
+```http://127.0.0.1:8080/zoo/animals```  
+*(where ```zoo/animals``` is replaced by a valid GET-enabled resource of your application)*
+
 ## Your Task
 
-Not it is your turn! 
+Now it is your turn! 
 
  * The target REST interface description for your task is below.
  * All you need to do is replicate the above steps.
