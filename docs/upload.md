@@ -2,7 +2,7 @@
 
 Congratulations, you're almost done!  
 We prepared an upload location for your results. Please make sure you did not miss anything!
-Your personal upload location is [...](...).
+Please use your personal upload link, sent to you by email.
 
 ## Checklist
 
