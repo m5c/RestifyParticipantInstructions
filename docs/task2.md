@@ -3,9 +3,7 @@ Your **second** task is the **TouchCORE assisted** conversion of the **Book Stor
 
  > **WARNING!** Start your screen recording **now**. Your entire task actvity must be captured. This includes your familiarization with the task description!
 
-## Task Illustration
-
- * I will now illustrate your upcoming task on a sample application, the **Zoo**.
+## Zoo Task Illustration
 
 
 
@@ -15,7 +13,8 @@ Your **second** task is the **TouchCORE assisted** conversion of the **Book Stor
 
 
 
-## TouchCORE assisted converstion to a RESTful service.
+
+## TouchCORE assisted converstion to a RESTful service
 
 Zoo...
 

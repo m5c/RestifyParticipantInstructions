@@ -1,4 +1,4 @@
-## TouchCORE assisted converstion to a RESTful service.
+## TouchCORE assisted converstion to a RESTful service
 
 Zoo...
 

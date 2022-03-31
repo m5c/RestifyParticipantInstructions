@@ -1,4 +1,4 @@
-## Manual converstion to a RESTful service.
+## Manual converstion to a RESTful service
 
 Zoo...
 

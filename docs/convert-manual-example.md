@@ -1,57 +1,19 @@
-## Instructions and Examples
+I will now illustrate the steps of a **manual** conversion to a RESTful service on the example of the Zoo.  
 
-this section... demonstrate how to manually convert... exemplified on Zoo demo code. Carefully read through instructinos, then convert the requested sample application the same way... using the provided interface description.
+ * Please watch [this short screencast](...) where I demonstrate and explain the required code changes.
+ * Below you additionally find a recapitulation of the main steps.
+ * Additionally you can conveniently inspect both versions and the changes made:
+    * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
+    * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
+    * Compare versions: ```git diff master..RESTified``` or [inspect changes online](https://github.com/kartoffelquadrat/Zoo/commit/8fe7675b65f795897910358ed089ea2a0e22aeff).
 
- * Whenever lost, you can use this command to see all changes made between the original and the RESTified version of the sample application:
-```git diff master..RESTified```
+### Project Layout Overview
 
-
-
-Please only clone these three repositories for now, do not inspect the code yet
-
-Next I will provide you with the basic programming skills required for task completion.
-
- * Your job will be the conversion of a legacy java program into a RESTful service.
- * Depending on your task description you will either do this:
-    * Manually, using an IDE.
-    * Semi-automated, using TouchCORE.
-
-No worries, I will now show you everything you need to know, based on a tiny sample program.
-
-### Welcome to the Zoo!
-
-The Zoo is a little illustration of your upcoming tasks and tools.
-
- * Please **now** [clone this sample project]():  
-```git clone https://github.com/kartoffelquadrat/Zoo.git```  
- * The repository aready has both versions preparedL
-    * A classic java application:
-       * On branch ```master```: ```git checkout master```
-       * Compile it with: ```mvn clean install```
-       * Start it with: ```java -jar target/zoo.jar```
-    * A restful version:
-       * On branch ```RESTified```: ```git checkout RESTified```
-       * Compile it with: ```mvn clean package```
-       * Start it with: ```java -jar target/zoo-restified.jar```
-
-#### Project Layout
-
-#### Project Configuration
+### Build Configuration Changes
 
 #### Build and Run
 
-
-
-
-
-
-### Maven Changes
-
-project layout tree reminder.
-
-All changes... ```pom.xml```
-
-### Code Changes
+### Java Code Changes
 
 #### Launcher
 
@@ -59,4 +21,4 @@ All changes... ```pom.xml```
 
 #### Resource Mapping with Annotations
 
-### Compile / Run / Verify
+### Compile / Run / Verify (possibly master template)

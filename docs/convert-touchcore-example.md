@@ -1,15 +1,14 @@
-## Instructions and Examples
+I will now illustrate the steps of a **TouchCORE assisted** conversion to a RESTful service on the example of the Zoo.  
 
-this section... demonstrate how to automated convert... exemplified on Zoo demo code. Carefully read through instructinos, then convert the requested sample application the same way... using the provided interface description.
+ * Please watch [this short screencast](...) where I demonstrate and explain TouchCORE usage.
+ * Below you additionally find a recapitulation of the main steps.
 
-Ref to video.
+### Load TouchCORE Project
 
-### Project open
+### Draw ResTL Model
 
-### ResTL Design
+### Resource and Parameter Mapping
 
-### Mapping
+### Code Generation
 
-### Code Gen
-
-### Compile / Run / Verify
+### Compile / Run / Verify (possibly master template)
