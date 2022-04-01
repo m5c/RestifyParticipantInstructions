@@ -31,9 +31,9 @@ function patchTask
 
 	  red )
             TASK1='App: BookStore, Tool: TouchCORE'
-            TASK1VERBOSE='Your **first** task is the **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.'
+            TASK1VERBOSE=' **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.'
             TASK2='App: TicTacToe, Tool: Manual'
-            TASK2VERBOSE='Your **second** task is the **manual** conversion of the **Tic Tac Toe** into a RESTful service.'
+            TASK2VERBOSE=' **manual** conversion of the **Tic Tac Toe** into a RESTful service.'
 	    METHOD1=touchcore
 	    METHOD2=manual
             APP1=bookstore
@@ -43,9 +43,9 @@ function patchTask
 
 	  green )
             TASK1='App: BookStore, Tool: Manual'
-            TASK1VERBOSE='Your **first** task is the **manual** conversion of the **Book Store** into a RESTful service.'
+            TASK1VERBOSE=' **manual** conversion of the **Book Store** into a RESTful service.'
             TASK2='App: TicTacToe, Tool: TouchCORE'
-            TASK2VERBOSE='Your **second** task is the **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
+            TASK2VERBOSE=' **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
 	    METHOD1=manual
 	    METHOD2=touchcore
             APP1=bookstore
@@ -55,9 +55,9 @@ function patchTask
 
 	  blue )
             TASK1='App: TicTacToe, Tool: TouchCORE'
-            TASK1VERBOSE='Your **first** task is the **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
+            TASK1VERBOSE=' **TouchCORE assisted** conversion of **Tic Tac Toe** into a RESTful service.'
             TASK2='App: BookStore, Tool: Manual'
-            TASK2VERBOSE='Your **second** task is the **manual** conversion of the **BookStore** into a RESTful service.'
+            TASK2VERBOSE=' **manual** conversion of the **BookStore** into a RESTful service.'
 	    METHOD1=touchcore
 	    METHOD2=manual
             APP1=xox

@@ -101,7 +101,7 @@ The above functionality is all provided by a singleton class: [```Zoo```](https:
 
  * For convenience, here is a class diagram of the ```Zoo``` class:  
 ![zoo](../captures/zoo-bl.png)
- * You can also inspect the [DekstopLauncher](https://github.com/kartoffelquadrat/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java), to see how to invoke above methods.
+ * You can also inspect the [DesktopLauncher](https://github.com/kartoffelquadrat/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java), to see how to invoke above methods.
  * Finally you can also run the provided Zoo implementation as is, to see a demo of above functionality:
     * Open a terminal in your cloned Zoo project
     * Type: ```mvn clean package exec:java```
