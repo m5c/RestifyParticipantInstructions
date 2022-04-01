@@ -15,7 +15,7 @@ Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTf
 
 
 I will now illustrate the steps of a **manual** conversion to a RESTful service on the example of the Zoo.  
-I will use the previously shown [Zoo REST interface description](interface-zoo.txt){:target="\_blank"}.
+I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
  * Please watch [this short screencast](...) where I demonstrate and explain the required code changes.
  * Below you additionally find a recapitulation of the main steps.
@@ -54,8 +54,10 @@ To compile and test your produced REST service:
 
 Now it is your turn! 
 
+### Instructions
+
+ * All you need to do is replicate the above steps for the requested app.
  * The target REST interface description for your task is below.
- * All you need to do is replicate the above steps.
  * Please now run a
 **manual** conversion of **Tic Tac Toe** into a RESTful service.
 

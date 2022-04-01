@@ -15,7 +15,7 @@ Your **second** task is the **TouchCORE assisted** conversion of the **Book Stor
 
 
 I will now illustrate the steps of a **TouchCORE assisted** conversion to a RESTful service on the example of the Zoo.  
-I will use the previously shown [Zoo REST interface description](interface-zoo.txt){:target="\_blank"}.
+I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
  * Please watch [this short screencast](...) where I demonstrate and explain TouchCORE usage.
  * Below you additionally find a recapitulation of the main steps.
@@ -44,8 +44,10 @@ To compile and test your produced REST service:
 
 Now it is your turn! 
 
+### Instructions
+
+ * All you need to do is replicate the above steps for the requested app.
  * The target REST interface description for your task is below.
- * All you need to do is replicate the above steps.
  * Please now run a
 **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 

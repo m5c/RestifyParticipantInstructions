@@ -13,6 +13,8 @@ To compile and test your produced REST service:
 
 Now it is your turn! 
 
+### Instructions
+
+ * All you need to do is replicate the above steps for the requested app.
  * The target REST interface description for your task is below.
- * All you need to do is replicate the above steps.
  * Please now run a
