@@ -8,23 +8,32 @@ Let's first check that you have all required software installed on your machine.
 
 ### Java
 
-You need Java, version ```11.0.5```. Unfortunately it has to be exactly this version for compatibility with TouchCORE.
-
- > TODO: verify! Test TouchCORE with other versions.
+You need Java, version ```11.0.5```. Unfortunately it has to be **exactly** this version for compatibility with TouchCORE.
 
  * Verify your java version with ```java -version```
- * Install java ```11.0.5``` if your version differs. INSTRUCTIONS HERE.
-   * Verify the version again after installation.
+ * If the output is **not exactly 11.0.5**, install that version now:  
+
+| Operating System | JDK 11.0.5 Download Link |
+|---|---|
+| Mac |[PKG](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg) |
+| Linux | [TAR.GZ](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz) |
+| Windows | [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) / [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) |
+
+ * **After installation**, verify that **11.0.5 is now the default installed version**.  
+Type again: ```java -version```, check the output.
 
 ### Maven
 
 You need the build tool maven.
 
  * Verify that your system has the command: ```mvn```  
- If not found, install it:
-     * [Mac](https://brew.sh/): ```brew install maven```
-     * [Linux](https://linux.die.net/man/8/apt-get): ```sudo apt install maven```
-     * [Windows](https://maven.apache.org/download.cgi): *follow the UI wizard*
+ If not found, install it now:
+
+| Operating System | Maven Install Instructions |
+|---|---|
+| Mac | Install [brew](https://brew.sh/). Then type: ```brew install maven``` |
+| Linux | Type: ```apt-get install maven``` |
+| Windows | Use [this installer](https://maven.apache.org/download.cgi) and follow the UI wizard. |
 
 ### TouchCORE
 
@@ -117,10 +126,10 @@ The RESTification of an application (e.g. the Zoo) requires an interface descrip
 For example for the Zoo the interface description could look like this:  
 
  * Your interface should begin with a top-level resource "*zoo*", not offering any methods.
- * "*bookstore*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
+ * "*zoo*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
     * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
     * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
- * The "*animals*" resource should have a single dynamic placeholder subresource representing an specific animal, identified by name.
+ * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalnames*"
     * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource, service is input parameter.
     * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
 
