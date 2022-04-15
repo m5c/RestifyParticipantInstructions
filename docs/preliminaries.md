@@ -8,32 +8,48 @@ Let's first check that you have all required software installed on your machine.
 
 ### Java
 
-You need Java, version ```11.0.5```. Unfortunately it has to be **exactly** this version for compatibility with TouchCORE.
+You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly** this version for compatibility with TouchCORE.
 
  * Verify your java version with ```java -version```
- * If the output is **not exactly 11.0.5**, install that version now:  
+ * If the output is **not exactly 11.0.5**, install it:
 
-| Operating System | JDK 11.0.5 Download Link |
-|---|---|
-| Mac |[PKG](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg) |
-| Linux | [TAR.GZ](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz) |
-| Windows | [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) / [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) |
+=== "Mac OS"
+     * Download the [JDK 11.0.5 MacOS package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg).
+     * Double click the downloaded ```.pkg``` file.
+     * Follow the install instructions.
 
- * **After installation**, verify that **11.0.5 is now the default installed version**.  
+=== "Linux"
+     * Download the [JDK 11.0.5 Linux package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
+     * Extract the file: ```tar xvf *.tar.gz```
+     * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html).
+
+=== "Windows"
+     * Download the JDK 11.0.5 [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
+     * Double click the downloaded file.
+     * Follow the install instructions.
+
+ > **After installation**, verify that **11.0.5 is now the default installed version**.  
 Type again: ```java -version```, check the output.
 
 ### Maven
 
-You need the build tool maven.
+You will need the java build tool *Maven*.
 
- * Verify that your system has the command: ```mvn```  
- If not found, install it now:
+ * Test if your system has the ```mvn``` command.
+ * If missing, install it:
 
-| Operating System | Maven Install Instructions |
-|---|---|
-| Mac | Install [brew](https://brew.sh/). Then type: ```brew install maven``` |
-| Linux | Type: ```apt-get install maven``` |
-| Windows | Use [this installer](https://maven.apache.org/download.cgi) and follow the UI wizard. |
+=== "Mac OS"
+     * Unless already installed, [get the ```brew``` package manager](https://brew.sh/).
+     * Install maven:  
+    ```brew install maven```
+
+=== "Linux"
+     * Use the ```apt``` package manager to install maven:  
+    ```sudo apt install maven```
+
+=== "Windows"
+     * Download the [graphical install wizard](https://maven.apache.org/download.cgi).
+     * Double click it and follow the instructions.
 
 ### TouchCORE
 
@@ -43,7 +59,15 @@ You need a special TouchCORE release, built for this study. Older TouchCORE vers
 
  > You can not use an older version of TouchCORE. The required features are only contained in the above version.
 
- * Verify you can start it with: ```java -jar TouchCORE.jar```  
+ * Verify you can start it:
+
+=== "Intel / AMD Processor"
+     ```java -jar TouchCORE.jar```
+
+=== "Apple M1 Processor"
+     ```softwareupdate --install-rosetta``` (only first time)  
+     ```java -jar TouchCORE.jar```
+
 You should see this:  
 ![touchcore-start](captures/touchcore-start.png)
 
@@ -129,11 +153,13 @@ For example for the Zoo the interface description could look like this:
  * "*zoo*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
     * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
     * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
- * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalnames*"
-    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource, service is input parameter.
+ * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalnames*". This dynamic subresource should offer a *[Get]* and a *[Put]* method.
+    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource (which serves as input parameter).
     * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
 
- > Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
+Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
+
+ > It's a good practice to have the textual description open throughout your task. For your convenience the [Zoo description as is avaible as separate file](interface-zoo.txt) (as will be the case for the decriptions you'll work with throughout your tasks).
 
 There are two ways to achieve this. In each task...
 
