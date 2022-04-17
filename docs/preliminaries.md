@@ -55,16 +55,17 @@ You will need the java build tool *Maven*.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/TouchCORE-restify.jar)
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
+ * Extract the downloaded zip file.
 
  > You can not use an older version of TouchCORE. The required features are only contained in the above version.
 
  * Verify you can start it:
 
-=== "Intel / AMD Processor"
+=== "Intel / AMD CPU"
      ```java -jar TouchCORE.jar```
 
-=== "Apple M1 Processor"
+=== "Apple M1 CPU"
      ```softwareupdate --install-rosetta``` (only first time)  
      ```java -jar TouchCORE.jar```
 
@@ -153,13 +154,13 @@ For example for the Zoo the interface description could look like this:
  * "*zoo*" should have two subresources, "*animals*" and "*openinghours*", both offering a *[GET]* method.
     * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
     * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
- * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalnames*". This dynamic subresource should offer a *[Get]* and a *[Put]* method.
+ * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalname*". This dynamic subresource should offer a *[Get]* and a *[Put]* method.
     * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource (which serves as input parameter).
     * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
 
 Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
 
- > It's a good practice to have the textual description open throughout your task. For your convenience the [Zoo description as is avaible as separate file](interface-zoo.txt) (as will be the case for the decriptions you'll work with throughout your tasks).
+ > It's a good practice to have the textual description open throughout your task. For your convenience the [Zoo description also is avaible as separate file](interface-zoo.txt) (as will be the case for the decriptions you'll work with throughout your tasks).
 
 There are two ways to achieve this. In each task...
 

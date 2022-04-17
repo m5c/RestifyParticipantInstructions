@@ -116,6 +116,14 @@ For the upcoming two tasks you will need prepared source code to work on.
     * Run: ```mvn clean install```
     * Verify there are no error messages printed to screen.
 
+## Prepared Models
+
+Throughout your tasks you will be working with the below TouchCORE model.
+
+ * Download [the model bundle](https://www.cs.mcgill.ca/~mschie3/studymodels/).
+ * Extract them all on your disk.
+ * **Do not yet open them** with TouchCORE.
+
 ## Task Illustration
 
 In both of your tasks you will convert an existing java application to a RESTful service. This activity is also called *RESTify* or *RESTification*.  
