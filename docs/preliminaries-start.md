@@ -55,16 +55,17 @@ You will need the java build tool *Maven*.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/TouchCORE-restify.jar)
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
+ * Extract the downloaded zip file.
 
  > You can not use an older version of TouchCORE. The required features are only contained in the above version.
 
  * Verify you can start it:
 
-=== "Intel / AMD Processor"
+=== "Intel / AMD CPU"
      ```java -jar TouchCORE.jar```
 
-=== "Apple M1 Processor"
+=== "Apple M1 CPU"
      ```softwareupdate --install-rosetta``` (only first time)  
      ```java -jar TouchCORE.jar```
 
