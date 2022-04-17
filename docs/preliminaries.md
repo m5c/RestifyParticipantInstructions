@@ -98,7 +98,11 @@ You'll need zoom, to record your task activity.
 
 > **Verify that your *Desktop* recording to file worked. Watch your test recording now!**
 
-## Source Code
+## Applications
+
+This section describes how to obtain source code and prepared TouchCORE models for the study objects.
+
+### Source Code
 
 For the upcoming two tasks you will need prepared source code to work on.  
 
@@ -115,6 +119,14 @@ For the upcoming two tasks you will need prepared source code to work on.
     * Open a terminal / command line in the project folder.
     * Run: ```mvn clean install```
     * Verify there are no error messages printed to screen.
+
+### Prepared Models
+
+Throughout your tasks you will be working with the below TouchCORE model.
+
+ * Download [the model bundle](https://www.cs.mcgill.ca/~mschie3/studymodels/studymodels.zip).
+ * Extract them all on your disk.
+ * **Do not yet open them** with TouchCORE.
 
 ## Task Illustration
 

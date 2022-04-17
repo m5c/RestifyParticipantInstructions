@@ -47,5 +47,5 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
  * Navigate to your TouchCORE model directory
  * Open a terminal in the new *generated sources* folder
  * Run the RESTful service with: ```mvn clean package spring-boot:run```
- * Test any *Get* operation with your browser.  
-Type [```http://127.0.0.1:8080/yourrootresource/yoursubresource```](http://127.0.0.1:8080/)
+ * Test any *Get* operation with your browser, e.g.:  
+[```http://127.0.0.1:8080/zoo/animals```](http://127.0.0.1:8080/)
