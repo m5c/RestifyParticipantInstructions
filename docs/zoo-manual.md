@@ -12,9 +12,23 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
 ### Build Configuration Changes
 
+ > Want to see all Zoo-RESTify ```pom.xml``` changes at a glance? Run ```git diff master..RESTified pom.xml```. Green lines were added for RESTification, red lines were removed.
+
 #### Build and Run
 
+These instructions are to build and run from command line. While developing in IntelliJ you can safly use the "green triangle button" next to your new spring launcher class.  
+![greenbutton](captures/intellij/greenbutton.png)
+
+The first time you start your REST application you might see a warning about incoming connections. Select "*Allow*".
+![firewall](captures/intellij/firewall.png)  
+
+  * Build a self contained executable jar file: ```mvn clean package```
+  * Run the jar file: ```java -jar target/zoorestified.jar```  
+```zoorestified``` is the name you provided as ```finalName``` in your ```pom.xml```.
+
 ### Java Code Changes
+
+ > Want to see all Zoo-RESTify ```java``` changes at a glance? Run ```git diff master..RESTified *java```. Green lines were added for RESTification, red lines were removed.
 
 #### Launcher
 
@@ -23,3 +37,4 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 #### Resource Mapping with Annotations
 
 ### Compile / Run / Verify (possibly master template)
+
