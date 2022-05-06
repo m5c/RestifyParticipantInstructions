@@ -8,7 +8,7 @@ Your answer: ...
 
 Your answer: ...
 
-3) Question: Which approach would you prefer to apply for your own programmin project, if you were to RESTify a legacy application? Manual or Tool-Assisted?
+3) Question: Which approach would you prefer to apply for your own programming project, if you were to RESTify a legacy application? Manual or Tool-Assisted?
 
 Your answer: ...
 
@@ -24,6 +24,19 @@ Your answer: ...
 
 Your answer: ...
 
-7) Is there anything else about this study you want to comment?
+7) Question: Which of the methodologies (TouchCORE vs. IntelliJ) did you experience as more intuitive and why ?
+
+Your answer: ...
+
+8) Question: For which task methodology are you more confident that your handed in solution passes out unit tests  and why?
+
+Your answer: ...
+
+9) Question: Which of the provided solutions are you more likely to apply for your personal projects in the future and why?
+
+Your answer: ...
+
+
+8) Is there anything else about this study you want to comment?
 
 Your answer...
