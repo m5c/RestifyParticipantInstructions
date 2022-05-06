@@ -11,7 +11,7 @@ Welcome to the the *RESTify Experiment*.
  * For any technical concern, please contact the [principal investigator](mailto:maximilian.schiedermeier@mcgill.ca).
 
 
-These instructions are linear. Follow the instructions as you read them. Do not alternate the order or skip sections. The experiment is finished, once you have reached the end of this documentation.
+These instructions are linear. Follow the instructions as you read them. Do not alternate the order or skip sections. Also, do not to your first task, once you have started your second task. The experiment is finished, once you have reached the end of this documentation.
 
  > tl;dr: read everything, read it carefully! We will verify your upload before compensation.
 

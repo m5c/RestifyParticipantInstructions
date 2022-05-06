@@ -1,7 +1,7 @@
 I will now illustrate the steps of a **manual** conversion to a RESTful service on the example of the Zoo.  
 I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
- * Please watch [this short screencast](...) where I demonstrate and explain the required code changes.
+ * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
  * Below you additionally find a recapitulation of the main steps.
  * Additionally you can conveniently inspect both versions and the changes made:
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).

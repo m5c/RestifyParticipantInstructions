@@ -97,9 +97,12 @@ function patchTask
         cat docs/zoo-$METHOD1.md >> docs/task1.md
         cat docs/task-description.md >> docs/task1.md
         echo $TASK1VERBOSE >> docs/task1.md
-        cat docs/interface-$APP1.md >> docs/task1.md
+        cat docs/diagram-$APP1.md >> docs/task1.md
+        cat docs/interface-$APP1.txt >> docs/task1.md
+        echo "" >> docs/task1.md
+	echo " > Click <a href=\"../interface-$APP1.txt\" download>here to download interface description</a> as file". >> docs/task1.md
 
-	# task 1 markdown
+	# task 2 markdown
 	echo '# Task 2' > docs/task2.md
         echo -n 'Your **second** task is the ' >> docs/task2.md
         echo $TASK2VERBOSE >> docs/task2.md
@@ -107,7 +110,10 @@ function patchTask
         cat docs/zoo-$METHOD2.md >> docs/task2.md
         cat docs/task-description.md >> docs/task2.md
         echo $TASK2VERBOSE >> docs/task2.md
-        cat docs/interface-$APP2.md >> docs/task2.md
+        cat docs/diagram-$APP2.md >> docs/task2.md
+        cat docs/interface-$APP2.txt >> docs/task2.md
+        echo "" >> docs/task2.md
+	echo " > Click <a href=\"../interface-$APP2.txt\" download>here to download interface description</a> as file". >> docs/task2.md
 }
 
 # deploys one colour group on server

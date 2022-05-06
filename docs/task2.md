@@ -52,9 +52,11 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  * While in the ResTL perspective, additionally open the *Class Diagram* perspective in split-view mode.
     * Click the *Split-View Button* 
+![splitview](captures/touchcoreui/splitview.png)
     * Select the *Class Diagram* model
  * Drag lines to establish mappings
     * Connect *Resource Methods* (circles) to *Class Operations*
+![map](captures/touchcoreui/map.png)
     * Connect *Dynamic Resources* (boxes) to *Operation Parameters*
 
 ### Code Generation
@@ -62,7 +64,8 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
  * Make sure the original application is registered in your system:
     * Clone the sources of the original (unrestified) java application
     * Install it as library, with ```mvn clean install```
- * Generate the RESTified code with the *Transformator* button
+ * Generate the RESTified code with the *Transformator* button  
+![trafo](captures/touchcoreui/generate.png)
 
 ### Build and Run your REST service
 
@@ -89,9 +92,16 @@ Now it is your turn!
 ### Instructions
 
  * All you need to do is replicate the above steps for the requested app.
+ * Limits:
+    * You may stop whenever you deem the task successfully completed.
+    * You may also stop after 45 Minutes of refactoring, whatever the state of your refactoring - You are however allowed to continue as long as you want.
  * The target REST interface description for your task is below.
  * Please now run a
 **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
+### Legacy Application Details
+
+Below diagram highlights classes and methods of the [legacy Book Store application](https://github.com/kartoffelquadrat/BookStoreInternals), relevant to your RESTification task. For more information on theses methods, also consult the [Book Store online documentation](https://kartoffelquadrat.github.io/BookStoreInternals/eu/kartoffelquadrat/bookstoreinternals/package-summary.html).  
+![bookstore-classes](../captures/bs-bl.png)
 
 
 ### Interface Description: Book Store Resources and Methods
@@ -116,3 +126,5 @@ Now it is your turn!
  * Finally, the dynamic resource representing a specific geographic location should itself have a dynamic subresource representing the stock for a given book at the given location.
     * A *[GET]* request on this dynamic resource should return the amount of copies in stock for a book specified by isbn (the value of this placeholder resources) and stock location (the value of this resource's parent placeholder resource)
     * A *[POST]* request on this dynamic resource should update the current amount of copies for a given book. Target location and isbn are likewise encoded by this placeholder resource and its parent placeholder resource. The new amount is provided as request body payload.
+
+ > Click <a href="../interface-bookstore.txt" download>here to download interface description</a> as file.

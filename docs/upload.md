@@ -9,7 +9,7 @@ Congratulations, you're almost done! Last thing to do is to send us your results
 
  * Screen recordings
  * Project folders (both tasks)
- * Comments (please use [this](../comments.txt) form)
+ * Comments (please use <a href="../comments.txt" download>this</a> form)
 
 ## Claim your gift card
 
