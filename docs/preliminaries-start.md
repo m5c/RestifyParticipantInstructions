@@ -72,7 +72,7 @@ You need a special TouchCORE release, built for this study. Older TouchCORE vers
 You should see this:  
 ![touchcore-start](captures/touchcore-start.png)
 
- > Should the TouchCORE window does not fit your screen, or should you wish to adjust the window dimensions, edit the file ```Settings.txt``` (in the TouchCORE directory) and adjust the lines: ```DisplayWidth=...``` and ```DisplayHeight=...```.
+ > Should the TouchCORE window does not fit your screen, or should you wish to adjust the window dimensions, edit the file ```Settings.txt``` (in the TouchCORE directory) and adjust the lines: ```DisplayWidth=...``` and ```DisplayHeight=...```. Fullscreen mode on M1-Macs is not reliable, do not use it if you have an M1-Mac.
 
 ### IntelliJ
 
