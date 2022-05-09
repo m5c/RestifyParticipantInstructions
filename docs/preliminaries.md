@@ -136,6 +136,11 @@ Throughout your tasks you will be working with the below TouchCORE model.
 
 In both of your tasks you will convert an existing java application to a RESTful service. This activity is also called *RESTify* or *RESTification*.  
 
+ * A REST application is a service that exposes functionality over a a network protocol:
+    * The service creates the illusion of offering all functionality through CRUD operations on resources.  
+This is a bit like file system access where you can **C**reate, **R**ead, **U**pdate or **D**elete files.  
+However, access is not through a file system, but though the HTTP protocol.
+    * A REST interface is always an abstraction of the actual implementation, and should not be confused with RMI (*Remote Method Invocation*) where existing methods are called as-they-are over network.
  * At the start of each task I will provide you with the tools for this process and illustrate the requests activity on a sample application, the **Zoo**.
 
 ### The Zoo Application
