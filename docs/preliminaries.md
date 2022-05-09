@@ -140,6 +140,11 @@ In both of your tasks you will convert an existing java application to a RESTful
     * The service creates the illusion of offering all functionality through CRUD operations on resources.  
 This is a bit like file system access where you can **C**reate, **R**ead, **U**pdate or **D**elete files.  
 However, access is not through a file system, but though the HTTP protocol.
+    * A resource is identified by its URL (*Unique Resource Location). It looks e.g. like this:  
+```http://127.0.0.1:8080/zoo/animals```
+        * ```http``` specifies the protocol to reach this resource
+        * ```127.0.0.1:8080``` sets physical location of the target machine and the port running the REST service.
+        * ```zoo/animals``` is the location of a resource, offered by the running REST service.
     * A REST interface is always an abstraction of the actual implementation, and should not be confused with RMI (*Remote Method Invocation*) where existing methods are called as-they-are over network.
  * At the start of each task I will provide you with the tools for this process and illustrate the requests activity on a sample application, the **Zoo**.
 
