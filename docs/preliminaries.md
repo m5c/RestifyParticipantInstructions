@@ -58,11 +58,11 @@ You need a special TouchCORE release, built for this study. Older TouchCORE vers
  * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
  * Extract the downloaded zip file.
 
- > You can not use an older version of TouchCORE. The required features are only contained in the above version.
+ > You **can not** use an older version of TouchCORE. The required features are only contained in the above version.
 
  * Verify you can start it:
 
-=== "Intel / AMD CPU"
+=== "Intel/AMD CPU"
      ```java -jar TouchCORE.jar```
 
 === "Apple M1 CPU"
@@ -84,7 +84,9 @@ Any IDE can be used, but we strongly recommend IntelliJ. Also further instructio
 
 ### Zoom
 
-You'll need zoom, to record your task activity.
+You'll need zoom, to record your task activity. (*)
+
+ > (*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
 
  * No worries you can stay offline, Zoom is only required to record your screen to disk.
  * Unless already installed, [install zoom](https://zoom.us/download) now.

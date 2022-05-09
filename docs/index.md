@@ -36,6 +36,7 @@ Your second task will require you to work on a different application than the fi
 Your second task will require you to apply a different methodology than the first.
  *  Record your on screen activity:
 Run a screen recording from the moment you first open the task description until completion.
+    * It is allowed to take breaks and submit multiple screen recordings per task. However, in that case your recordings must in their entirety still cover all your task activity. Furthermore, the submitted file must be named in a way that clearly indicates their chronological order.
 
  > **If you change task order, context or approach, or do not document your activity, your data will be worthless to the experiment!**
 
