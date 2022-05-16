@@ -86,7 +86,7 @@ A manual RESTification requires four things:
   </configuration>
 </plugin>
 ```
-    * Add plugin for spring-boot launcher class:  
+    * Add plugin for spring-boot launcher class: (Don't create the new launcher just yet)  
 ```xml  
 <!-- Spring specific build plugin, produces self contained JAR with default launcher class.-->
 <plugin>
@@ -106,27 +106,6 @@ A manual RESTification requires four things:
 </plugin>
 ```
 
-#### Build and Run
-
-These instructions are to build and run from command line. While developing in IntelliJ you can safly use the "green triangle button" next to your new spring launcher class.  
-![greenbutton](captures/intellij/greenbutton.png)
-
-The first time you start your REST application you might see a warning about incoming connections. Select "*Allow*".
-![firewall](captures/intellij/firewall.png)  
-
-At some point you also need to build your application into a self contained artifact:  
-
-=== "Mac OS / Linux"
-     * Build a self contained executable jar file: ```mvn clean package```
-     * Run the jar file: ```java -jar target/zoorestified.jar```
-     > ```zoorestified``` is the name you provided as ```finalName``` in your ```pom.xml```.
-
-=== "Windows"
-     * Build a self contained executable jar file: ```mvn clean package```
-     * Run the jar file: ```java -jar target\zoorestified.jar```
-     > ```zoorestified``` is the name you provided as ```finalName``` in your ```pom.xml```.
-
-
 
 ### Java Code Changes
 
@@ -135,6 +114,9 @@ Run: ```git diff master..RESTified *java```
 Green lines were added for RESTification, red lines were removed.
 
 #### Launcher
+
+First thing to do is the creation of a new launcher class. It should be placed anywhere within the ```src/main/java/eu/kartoffelquadrat/...``` directory. Create it by right clicking on the ```eu.kartoffelquadrat...``` package:  
+![create](captures/intellij/launcher.png)
 
 Code of the ```RestLauncher.java``` class. (Replaces the legacy launcher)
 
@@ -227,4 +209,27 @@ public class ZooController {
 ```@PathVariable("animalname")```
      * Request body:  
 ```@RequestBody```
+
+### Build and Run
+
+These instructions are to build and run from command line. While developing in IntelliJ you can safly use the "green triangle button" next to your new spring launcher class.  
+![greenbutton](captures/intellij/greenbutton.png)
+
+The first time you start your REST application you might see a warning about incoming connections. Select "*Allow*".
+![firewall](captures/intellij/firewall.png)  
+
+At some point you also need to build your application into a self contained artifact:  
+
+=== "Mac OS / Linux"
+     * Build a self contained executable jar file: ```mvn clean package```
+     * Run the jar file: ```java -jar target/zoorestified.jar```
+     > ```zoorestified``` is the name you provided as ```finalName``` in your ```pom.xml```.
+
+=== "Windows"
+     * Build a self contained executable jar file: ```mvn clean package```
+     * Run the jar file: ```java -jar target\zoorestified.jar```
+     > ```zoorestified``` is the name you provided as ```finalName``` in your ```pom.xml```.
+
+
+
 

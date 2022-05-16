@@ -181,7 +181,7 @@ For example for the Zoo the interface description could look like this:
     * A *[GET]* request to *"animals"* should return the list of all animal names in the zoo.
     * A *[GET]* request to "*openinghours*" should return a description of the zoo's opening hours during the week and on weekends.
  * The "*animals*" resource should have a single **dynamic placeholder subresource** representing a specific animal, identified by name. Name it e.g. "*animalname*". This dynamic subresource should offer a *[Get]* and a *[Put]* method.
-    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource (which serves as input parameter).
+    * A *[GET]* request to the dynamic placeholder subresource should provide details on the given animal, identified by the value of the dynamic resource, i.e., the name of the animal (which serves as input parameter).
     * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new animal to the zoo. The name of the new animal is again specified by the value of the dynamic resource, while further details on the animal are passed as request body payload.
 
 Your task will be to formalize the provided interface description, and establish a semantic mapping on existing functionality and parameters.
