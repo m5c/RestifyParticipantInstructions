@@ -113,6 +113,13 @@ A manual RESTification requires four things:
 Run: ```git diff master..RESTified *java```  
 Green lines were added for RESTification, red lines were removed.
 
+#### Remove conflicting files
+
+You have to delete two things:
+
+ * The legacy launcher, located in ```src/main/java/eu/karotffelquadrat/*/DesktopLauncher.java```
+ * The legacy unit tests. Remove the entire test folder: ```src/test```
+
 #### Launcher
 
 First thing to do is the creation of a new launcher class. It should be placed anywhere within the ```src/main/java/eu/kartoffelquadrat/...``` directory. Create it by right clicking on the ```eu.kartoffelquadrat...``` package:  
