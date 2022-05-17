@@ -15,7 +15,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
     * Tap and hold the "Zoo" box  
 ![openmodel](captures/touchcoreui/openmodel.png)
     * Select "*Open Realization Model*"
-    * Inspect the *Class Diagram*  
+    * Inspect the *Class Diagram* (Business Logic)  
 ![bl](captures/touchcoreui/businesslogic.png)
 
 ### Draw ResTL Model
@@ -26,11 +26,15 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
     * Tap and hold the "Zoo" box  
 ![openmodel](captures/touchcoreui/openmodel.png)
     * Select "*Open Realization Model*"
+    * Open the "Exposed Interface" model
  * Modify the *ResTL* model according to the provided *Interface Description*
-    * Drag down to add new resources to the tree  
+    * Drag down to add new resources to the tree (start dragging *slightly* under an existing box)  
 ![addresource](captures/touchcoreui/addresource.png)
     * Click the circles to enable *Get / Put / Post / Delete* methods for a resource.  
 ![addmethod](captures/touchcoreui/addmethod.png)
+ * If you made a mistake, either
+    * tap and hold on a resource to remove it
+    * double click a resource to rename it
 
 ### Resource and Parameter Mapping
 
@@ -41,7 +45,10 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
  * Drag lines to establish mappings
     * Connect *Resource Methods* (circles) to *Class Operations*
 ![map](captures/touchcoreui/map.png)
-    * Connect *Dynamic Resources* (boxes) to *Operation Parameters*
+    * Connect *Dynamic Resources* (text in boxes) to *Operation Parameters*  
+![parammap](captures/touchcoreui/parammap.png)
+
+ > **Heads-up**: A correctly mapped model showcases lines of both colours, *blue* and *green*! If you only see one colour you may have forgotten parameter mappings.
 
 ### Code Generation
 

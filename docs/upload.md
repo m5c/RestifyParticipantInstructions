@@ -9,7 +9,9 @@ Congratulations, you're almost done! Last thing to do is to send us your results
 
  * Screen recordings
  * Project folders (both tasks)
- * Comments (please use <a href="../comments.txt" download>this</a> form)
+    * For you manual task we want the folder with all your sources.
+    * For your TouchCORE assisted task we want the model folder. Make sure it also contains the *generated maven sources* folder.
+ * Comments (please use <a href="../comments.txt" download>this</a> form), fill it out and upload it.
 
 ## Claim your gift card
 

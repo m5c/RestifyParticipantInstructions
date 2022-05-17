@@ -31,7 +31,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
     * Tap and hold the "Zoo" box  
 ![openmodel](captures/touchcoreui/openmodel.png)
     * Select "*Open Realization Model*"
-    * Inspect the *Class Diagram*  
+    * Inspect the *Class Diagram* (Business Logic)  
 ![bl](captures/touchcoreui/businesslogic.png)
 
 ### Draw ResTL Model
@@ -42,11 +42,15 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
     * Tap and hold the "Zoo" box  
 ![openmodel](captures/touchcoreui/openmodel.png)
     * Select "*Open Realization Model*"
+    * Open the "Exposed Interface" model
  * Modify the *ResTL* model according to the provided *Interface Description*
-    * Drag down to add new resources to the tree  
+    * Drag down to add new resources to the tree (start dragging *slightly* under an existing box)  
 ![addresource](captures/touchcoreui/addresource.png)
     * Click the circles to enable *Get / Put / Post / Delete* methods for a resource.  
 ![addmethod](captures/touchcoreui/addmethod.png)
+ * If you made a mistake, either
+    * tap and hold on a resource to remove it
+    * double click a resource to rename it
 
 ### Resource and Parameter Mapping
 
@@ -57,7 +61,10 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
  * Drag lines to establish mappings
     * Connect *Resource Methods* (circles) to *Class Operations*
 ![map](captures/touchcoreui/map.png)
-    * Connect *Dynamic Resources* (boxes) to *Operation Parameters*
+    * Connect *Dynamic Resources* (text in boxes) to *Operation Parameters*  
+![parammap](captures/touchcoreui/parammap.png)
+
+ > **Heads-up**: A correctly mapped model showcases lines of both colours, *blue* and *green*! If you only see one colour you may have forgotten parameter mappings.
 
 ### Code Generation
 
@@ -113,7 +120,7 @@ Below diagram highlights classes and methods of the [legacy Book Store applicati
     * A *[GET]* request to "*stocklocations*" should result in a listing of all geographic store locations.
  * The "*isbns*" resource should have a single dynamic placeholder subresource representing an isbn number,
     * A *[GET]* request to the dynamic placeholder subresource should provide details on a given book, identified by isbn number which serves as input parameter.
-    * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new book to the system. All details on the book are passed as request body payload.
+    * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new book to the system. All details on the book are passed as request body payload. (Note: This might look a bit peculiar to not use the value of the dynamic placeholder "isbn" for a subsequent mapping. That is ok here, because the required ISBN information is also contained in the body payload object. We do not want you to add any additional validation here, to keep things simple.)
  * The dynamic placeholder resource should have a child resource "*comments*", representing comments for a given book, identified by isbn. The value of the parent placeholder resource determines which book is targeted.
     * A *[GET]* request to the "*comments*" resource should result in a listing of all comments for the specified book. The value of the parent resource representing an isbn number servers as input parameter. The result should index comments by their id.
     * A *[POST]* request to the "*comments*" resource should allow the creation of new comments. The id of the new comment is generated on server side and not required, however, again the parent placeholder resource encodes the isbn of the targeted book. The comment itself is to be transmitted as request body payload.
