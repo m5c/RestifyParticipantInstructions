@@ -21,7 +21,11 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
 === "Linux"
      * Download the [JDK 11.0.5 Linux package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
      * Extract the file: ```tar xvf *.tar.gz```
-     * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html).
+     * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html):
+        * Set the JAVA_HOME and update your PATH in your ```~/.bashrc``` file:
+            * Extend path: ```PATH=$PATH:/wherever/you/extracted/it/jdk-.../bin/```
+            * Set java home: ```JAVA_HOME=/wherever/you/extracted/it/jdk-...```
+        * Open a new terminal or type: ```source ~/.bashrc```
 
 === "Windows"
      * Download the JDK 11.0.5 [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.

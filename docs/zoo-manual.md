@@ -2,34 +2,45 @@ I will now illustrate the steps of a **manual** conversion to a RESTful service 
 I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
  * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
- * Below you additionally find a recapitulation of the main steps.
+    * Below you find a recapitulation of the main steps.
+    * If anything does not work as expected, take a look at the [Troubleshoot Section](#troubleshoot).
  * Additionally you can conveniently inspect both versions and the changes made:
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
     * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
     * Compare versions: ```git diff master..RESTified``` or [inspect changes online](https://github.com/kartoffelquadrat/Zoo/commit/8fe7675b65f795897910358ed089ea2a0e22aeff).
 
+
 ### Project Layout Overview
 
-A manual RESTification requires four things:
+A manual RESTification is a series of five activites:
 
+ * [Loading of legacy sources into Integrated Development Environment (IntelliJ IDE)](#loading-legacy-sources-into-ide)
  * [Adjustment of the build configuration file: ```pom.xml```](#build-configuration-changes)
  * [Replacement of the launcher class](#launcher)
  * [Removal of singleton pattern or creation of proxy controllers](#beans-and-singletons)
  * [Decoration of REST controllers and target functions with Spring annotations](#resource-mapping-with-annotations)
+
+### Loading Legacy Sources into IDE
+
+ * Start IntelliJ
+ * Use the "Open"-button to load the previously cloned project sources  
+![]()
+
 
 ### Build Configuration Changes
 
  > Want to see all Zoo-RESTify ```pom.xml``` changes at a glance? Run ```git diff master..RESTified pom.xml```. Green lines were added for RESTification, red lines were removed.
 
  * Artifact properties:
-    * Adjust ```artifactId```. Add "restified"
-    * Adjust ```name```. Add "restified"
- * Update developer
+    * Adjust ```artifactId```. Change suffix to "restified"
+    * Adjust ```name```. Change suffix to "restified"
+ * Update developer information:
     * Remove email, organization
-    * Change name **to your personal codename**, e.g. ```blue snail``` (see email)
+    * Change name **to your personal codename**, e.g. ```blue snail``` (see my email)
     * Change organization to your university: ```mcgill.ca```
  * Parent:
-    * declare inheritance from spring boot parent:  
+    * Declare inheritance from spring boot parent.  
+Place below snippet right *after* the ```<license>...</license>``` block:    
 ```xml
 <!-- this parent block lets this maven project extend a prepared spring specific template.-->
 <parent>
@@ -49,9 +60,9 @@ A manual RESTification requires four things:
 </dependency>
 ```
  * Final Name
-    * Add "restified" to ```finalName``` attribute value
+    * **Add** "restified" to ```finalName``` attribute value
  * Build plugins:
-    * Remove plugin for legacy launcher class:  
+    * **Remove** plugin for legacy launcher class:  
 ```xml
 <!-- specify main class for exec goal -->
 <plugin>
@@ -70,7 +81,7 @@ A manual RESTification requires four things:
   </configuration>
 </plugin>
 ```
-    * Remove plugin for legacy compilation to self contained JAR:  
+    * **Remove** plugin for legacy compilation to self contained JAR:  
 ```xml  
 <!-- specify main class for JAR manifest-->
 <plugin>
@@ -86,7 +97,7 @@ A manual RESTification requires four things:
   </configuration>
 </plugin>
 ```
-    * Add plugin for spring-boot launcher class: (Don't create the new launcher just yet)  
+    * **Add** plugin for spring-boot launcher class: (Don't create the new launcher class yet!)  
 ```xml  
 <!-- Spring specific build plugin, produces self contained JAR with default launcher class.-->
 <plugin>
@@ -94,6 +105,7 @@ A manual RESTification requires four things:
   <artifactId>spring-boot-maven-plugin</artifactId>
   <configuration>
     <fork>true</fork>
+    <!-- Replace "zoo" by actual package name in next line! -->
     <mainClass>eu.kartoffelquadrat.zoo.RestLauncher</mainClass>
   </configuration>
   <executions>
@@ -109,7 +121,7 @@ A manual RESTification requires four things:
 
 ### Java Code Changes
 
- > **Hint**: You can use ```git``` to see all ```java``` changes at a glance.  
+ > **Hint**: You can use ```git``` to see all ```java``` changes made to the Zoo for manual RESTification.  
 Run: ```git diff master..RESTified *java```  
 Green lines were added for RESTification, red lines were removed.
 
@@ -118,12 +130,18 @@ Green lines were added for RESTification, red lines were removed.
 You have to delete two things:
 
  * The legacy launcher, located in ```src/main/java/eu/karotffelquadrat/*/DesktopLauncher.java```
- * The legacy unit tests. Remove the entire test folder: ```src/test```
+ * The legacy unit tests. Remove the entire test folder: ```src/test```  
+(This part has been skipped in the Zoo explanatory video, since there were no test classes)
 
 #### Launcher
 
-First thing to do is the creation of a new launcher class. It should be placed anywhere within the ```src/main/java/eu/kartoffelquadrat/...``` directory. Create it by right clicking on the ```eu.kartoffelquadrat...``` package:  
+First thing to do is the creation of a new launcher class. It should be placed anywhere within the ```src/main/java/eu/kartoffelquadrat/...``` directory. 
+
+ * Create it by right clicking on the ```eu.kartoffelquadrat...``` package:  
 ![create](captures/intellij/launcher.png)
+
+ * Enter ```RestLauncher``` as class name, **do not** type the ```.java``` extension. IntelliJ will handle that for you.  
+![entername](captures/intellij/entername.png)
 
 Code of the ```RestLauncher.java``` class. (Replaces the legacy launcher)
 
@@ -147,7 +165,10 @@ public class RestLauncher {
 
 #### Beans and Singletons
 
- * Spring creates new instances of classes annotated with ```@RestController```
+ * Spring creates new instances of classes annotated with:  
+```java
+@RestController
+```
  * The existing singleton pattern is bypassed, since Spring uses reflection to gain constructor access, even if the declared constructor is private.
  * Having both ```@RestController``` and a ```getInstance``` method in the same class is dangerous.  
 There are two ways to side-step inconsistency issues:
@@ -208,8 +229,8 @@ public class ZooController {
     | ```@GetMapping("...")``` |  ```@PutMapping("...")``` | ```@PostMapping("...")``` | ```@DeleteMapping("...")``` |
 
      * Arguments:
-        * Static: ```"zoo/animals"```
-        * Dynamic: ```"zoo/animals/{animalname}"```
+        * Static: Full resource path within quotes, e.g.: ```"zoo/animals"```
+        * Dynamic: Full resource path within quotes. Any dynamic placeholder on path is marked *by curly brackets*, e.g.:```"zoo/animals/{animalname}"```
 
  * Parameter mapping (these annotations decorate function parameters)
      * Pathvariable:  

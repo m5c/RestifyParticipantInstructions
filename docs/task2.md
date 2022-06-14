@@ -18,7 +18,8 @@ I will now illustrate the steps of a **TouchCORE assisted** conversion to a REST
 I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
  * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
- * Below you additionally find a recapitulation of the main steps.
+    * Below you find a recapitulation of the main steps.
+    * If anything does not work as expected, take a look at the [Troubleshoot Section](#troubleshoot).
 
 ### Load TouchCORE Project
 
@@ -135,3 +136,14 @@ Below diagram highlights classes and methods of the [legacy Book Store applicati
     * A *[POST]* request on this dynamic resource should update the current amount of copies for a given book. Target location and isbn are likewise encoded by this placeholder resource and its parent placeholder resource. The new amount is provided as request body payload.
 
  > Click <a href="../interface-bookstore.txt" download>here to download interface description</a> as file.
+## Troubleshoot
+
+ * I can't start TouchCORE, nothing happens when I double-click the JAR
+ * TouchCORE crashes with an exception, right after start
+ * I can't resize the TouchCORE window
+ * Nothing happens when I click elements in TouchCORE
+ * I cannot scroll around
+ * I cannot zoom
+ * I can not find how to open the prepared models
+ * TouchCORE says it generated code, but I do not find the output folder
+ * The code is generated, but when I compile it with Maven, it complains about the bookstore/xox internals not found.

@@ -101,6 +101,8 @@ function patchTask
         cat docs/interface-$APP1.txt >> docs/task1.md
         echo "" >> docs/task1.md
 	echo " > Click <a href=\"../interface-$APP1.txt\" download>here to download interface description</a> as file". >> docs/task1.md
+        # troubleshoot appendix task 1
+        cat docs/troubleshoot-$METHOD1.md >> docs/task1.md
 
 	# task 2 markdown
 	echo '# Task 2' > docs/task2.md
@@ -114,6 +116,9 @@ function patchTask
         cat docs/interface-$APP2.txt >> docs/task2.md
         echo "" >> docs/task2.md
 	echo " > Click <a href=\"../interface-$APP2.txt\" download>here to download interface description</a> as file". >> docs/task2.md
+        # troubleshoot appendix task 2
+        cat docs/troubleshoot-$METHOD2.md >> docs/task2.md
+
 }
 
 # deploys one colour group on server
@@ -131,7 +136,7 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
-    deploy
+#    deploy
 done
 
 # Update browser tabs and link location
@@ -140,5 +145,5 @@ echo http://127.0.0.1:8000/~mschie3/restify/
 for COLOUR in "${COLOURS[@]}"; do
         LOCATION=https://www.cs.mcgill.ca/~mschie3/$COLOUR/restify-study/
         echo -e ' \t '-$COLOUR: ' \t '$LOCATION
-        open $LOCATION
+#        open $LOCATION
 done
