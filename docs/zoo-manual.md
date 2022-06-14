@@ -3,7 +3,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
     * Below you find a recapitulation of the main steps.
-    * If anything does not work as expected, take a look at the [Troubleshoot Section](#troubleshoot).
+    * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
  * Additionally you can conveniently inspect both versions and the changes made:
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
     * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
@@ -23,9 +23,10 @@ A manual RESTification is a series of five activites:
 ### Loading Legacy Sources into IDE
 
  * Start IntelliJ
- * Use the "Open"-button to load the previously cloned project sources  
-![]()
-
+ * Use the "*Open*" option to get to the selection dialogue
+![open-1](captures/intellij/open-1.png)
+ * Select the cloned project root folder, then click the "*Open*" button:  
+![open-2](captures/intellij/open-2.png)
 
 ### Build Configuration Changes
 

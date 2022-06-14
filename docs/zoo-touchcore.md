@@ -3,7 +3,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
     * Below you find a recapitulation of the main steps.
-    * If anything does not work as expected, take a look at the [Troubleshoot Section](#troubleshoot).
+    * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
 
 ### Load TouchCORE Project
 

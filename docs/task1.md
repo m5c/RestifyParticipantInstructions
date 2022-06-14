@@ -19,7 +19,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
     * Below you find a recapitulation of the main steps.
-    * If anything does not work as expected, take a look at the [Troubleshoot Section](#troubleshoot).
+    * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
  * Additionally you can conveniently inspect both versions and the changes made:
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
     * Switch to *RESTified Zoo* version: ```git checkout RESTified``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo).
@@ -39,9 +39,10 @@ A manual RESTification is a series of five activites:
 ### Loading Legacy Sources into IDE
 
  * Start IntelliJ
- * Use the "Open"-button to load the previously cloned project sources  
-![]()
-
+ * Use the "*Open*" option to get to the selection dialogue
+![open-1](captures/intellij/open-1.png)
+ * Select the cloned project root folder, then click the "*Open*" button:  
+![open-2](captures/intellij/open-2.png)
 
 ### Build Configuration Changes
 
@@ -326,7 +327,11 @@ Below diagram highlights classes and methods of the [legacy Tic Tac Toe applicat
  > Click <a href="../interface-xox.txt" download>here to download interface description</a> as file.
 ## Troubleshoot
 
- * I open the project with IntelliJ, but everything is underlined in red.
- * I cannot compile / run the project, the green button is greyed out.
- * I RESTified the application, but when I start it there is a Nullpointer-Exception: Most likely one of the classes annotated with @RestController has constructor code that still cannot access @Autowire fields. E.g. if the constructor calls a method that initializes the service state, that method might require access to an @Autowired field, but that is only available after class initialization.  
-*Workaround:** Do not call that method in the constructor. Tell spring to call it after class initialization, when all fields are initialized. Use the @PostContruct annotation.
+ * **Q**: I open the project with IntelliJ, but everything is underlined in red.  
+**A**: The projet was not correctly opened. Delete the cloned folder, clone the repository again, then make sure to open the project [exactly as shown](#loading-legacy-sources-into-ide).
+ * **Q**: I cannot compile / run the project, the green button is greyed out.  
+**A**: The project has no launch configuration by default, therefore the arrow in the top bar is not available. Open the ```RestLauncher``` class instead and click on one of the green triangles, left of the code. 
+ * **Q**: I RESTified the application, but when I start it there is a Nullpointer-Exception: Most likely one of the classes annotated with @RestController has constructor code that still cannot access @Autowire fields. E.g. if the constructor calls a method that initializes the service state, that method might require access to an @Autowired field, but that is only available after class initialization.  
+**A**: Do not call that method in the constructor. Tell spring to call it after class initialization, when all fields are initialized. Use the @PostContruct annotation.
+ * **Q:** I've made a mistake on project import, how can I start from scratch?  
+Delete the cloned folder, clone the repository again, then make sure to open the project [exactly as shown](#loading-legacy-sources-into-ide).
