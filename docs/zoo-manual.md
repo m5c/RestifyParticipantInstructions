@@ -196,6 +196,10 @@ public class FooController {
     }
 }
 ```
+
+ > Note: Autowired fields are only accessible during class instantiation. Do not invoke methods that require autowired values from a constructor. Instead annotate those methods with ```@PostConstruct```. This advises spring to invoke a method after class instantiation, with guaranteed access to autowired values.
+
+
     * **Option 2:** Keep the singleton pattern / leave the original java class untouched. Instead place the ```@RestController``` annotation in a newly created proxy class.  
 Example:  
 ```java linenums="1"
