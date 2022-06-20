@@ -192,8 +192,11 @@ public class RestLauncher {
  * Having both ```@RestController``` and a ```getInstance``` method in the same class is dangerous.  
 There are two ways to side-step inconsistency issues:
 
-=== "Autowiring"
-    Remove the singleton pattern and replace all invocations of ```getInstance``` by ```@Autowired```.  
+=== "Autowiring (Recommended)"
+     * If you chose *Autowiring*, you do not create new classes. You directly annotate the relevant existing classes with ```@RestController```.
+     * This tells Spring to create one instance per annotated class, using a default constructor.
+     * Any existing singleton pattern is therefore obsolete: If you annotated a class with ```@RestController```, make sure to remove the singleton pattern (the ```getInstance``` method) and make the default constructor public.
+     * Whenever an instance of such an annotated class is required, you can obtain the spring maintained instance with ```@Autowired```.  
     Example:
     ```java linenums="1"
     package eu.kartoffelquadrat.zoo;
@@ -204,9 +207,9 @@ There are two ways to side-step inconsistency issues:
     @RestController
     public class FooController {
     
-    /*
-    @Autowired ensures the zoo field is set at instantiation of FooController, given Zoo is annotated with @RestController.
-    */
+        /*
+        @Autowired ensures the zoo field is set after instantiation of FooController, given Zoo is annotated with @RestController.
+        */
         @Autowired
         Zoo zoo;
     
@@ -216,11 +219,12 @@ There are two ways to side-step inconsistency issues:
         }
     }
     ```
-     > Note: Autowired fields are only accessible during class instantiation. Do not invoke methods that require autowired values from a constructor. Instead annotate those methods with ```@PostConstruct```. This advises spring to invoke a method after class instantiation, with guaranteed access to autowired values.
+     > Autowired fields are only accessible **after** class instantiation. Do not invoke methods that require autowired values from a constructor, or you will get a ```NullPointerException``` at runtime. Instead annotate those methods with ```@PostConstruct```. This advises spring to invoke a method after class instantiation.
 
 
 === "Proxy Classes"
-    Keep the singleton pattern / leave the original java class untouched. Instead place the ```@RestController``` annotation in a newly created proxy class.  
+     * If you chose *Proxy Classes*, you do annotate the existing classes. You instead replicate every existing relevant class and place all annotations in the replica. The replica acts as proxy that forwards every method call to the original, using ```getInstance()```.
+     * Keep the singleton pattern in the original java classes. They remain untouched. Instead place an ```@RestController``` annotation in every proxy class created.  
     Example:  
     ```java linenums="1"
     package eu.kartoffelquadrat.zoo;
@@ -234,6 +238,7 @@ There are two ways to side-step inconsistency issues:
     public class ZooController {
     
         /** Proxied access to a method of the original / singleton class.
+	// Mapping annotation goes here.
         public OpeningHours getOpeningHours() {
             // Access to the original class is achieved with a call to getInstance.
             return Zoo.getInstance().getOpeningHours();
