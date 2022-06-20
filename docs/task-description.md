@@ -18,6 +18,6 @@ Now it is your turn!
  * All you need to do is replicate the above steps for the requested app.
  * Limits:
     * You may stop whenever you deem the task successfully completed.
-    * You may also stop after 45 Minutes of refactoring, whatever the state of your refactoring - You are however allowed to continue as long as you want.
+    * You may also stop after 90 Minutes of refactoring, whatever the state of your refactoring - You are however also allowed to continue as long as you want.
  * The target REST interface description for your task is below.
  * Please now run a

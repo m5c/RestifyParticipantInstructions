@@ -1,8 +1,10 @@
 I will now illustrate the steps of a **manual** conversion to a RESTful service on the example of the Zoo.  
 I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
- * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
-    * Below you find a recapitulation of the main steps.
+ > Afterwards, your task will be to apply the same **manual** methodology on a **different** application. Your task is **not** to replicate the Zoo conversion while you are watching.
+
+ * Please watch [this screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
+    * Below you find a summary of the main steps.
     * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
  * Additionally you can conveniently inspect both versions and the changes made:
     * Switch to *Desktop Zoo* version: ```git checkout master``` or [inspect code online](https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo).
@@ -173,54 +175,55 @@ public class RestLauncher {
  * The existing singleton pattern is bypassed, since Spring uses reflection to gain constructor access, even if the declared constructor is private.
  * Having both ```@RestController``` and a ```getInstance``` method in the same class is dangerous.  
 There are two ways to side-step inconsistency issues:
-    * **Option 1:** (Recommended) Remove the singleton pattern and replace all invocations of ```getInstance``` by ```@Autowired```.  
-Example:
-```java linenums="1"
-package eu.kartoffelquadrat.zoo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class FooController {
-
-/*
-@Autowired ensures the zoo field is set at instantiation of FooController, given Zoo is annotated with @RestController.
-*/
-    @Autowired
-    Zoo zoo;
-
-    public void bar() {
-	// Here you can access the zoo instance using the local, autowired field (instead of calling the obsolete getInstance method)
+=== "Autowiring"
+    Remove the singleton pattern and replace all invocations of ```getInstance``` by ```@Autowired```.  
+    Example:
+    ```java linenums="1"
+    package eu.kartoffelquadrat.zoo;
+    
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    @RestController
+    public class FooController {
+    
+    /*
+    @Autowired ensures the zoo field is set at instantiation of FooController, given Zoo is annotated with @RestController.
+    */
+        @Autowired
+        Zoo zoo;
+    
+        public void bar() {
+    	// Here you can access the zoo instance using the local, autowired field (instead of calling the obsolete getInstance method)
         zoo.getOpeningHours();
+        }
     }
-}
-```
-
- > Note: Autowired fields are only accessible during class instantiation. Do not invoke methods that require autowired values from a constructor. Instead annotate those methods with ```@PostConstruct```. This advises spring to invoke a method after class instantiation, with guaranteed access to autowired values.
+    ```
+     > Note: Autowired fields are only accessible during class instantiation. Do not invoke methods that require autowired values from a constructor. Instead annotate those methods with ```@PostConstruct```. This advises spring to invoke a method after class instantiation, with guaranteed access to autowired values.
 
 
-    * **Option 2:** Keep the singleton pattern / leave the original java class untouched. Instead place the ```@RestController``` annotation in a newly created proxy class.  
-Example:  
-```java linenums="1"
-package eu.kartoffelquadrat.zoo;
-
-import org.springframework.web.bind.annotation.RestController;
-
-/**
-This Proxy class is decorated with @RestController, instead of the original singleton class. Any required method of the original class can be proxied with an internal getInstance call.
-*/
-@RestController
-public class ZooController {
-
-    /** Proxied access to a method of the original / singleton class.
-    public OpeningHours getOpeningHours() {
-        // Access to the original class is achieved with a call to getInstance.
-        return Zoo.getInstance().getOpeningHours();
+=== "Proxy Classes"
+    Keep the singleton pattern / leave the original java class untouched. Instead place the ```@RestController``` annotation in a newly created proxy class.  
+    Example:  
+    ```java linenums="1"
+    package eu.kartoffelquadrat.zoo;
+    
+    import org.springframework.web.bind.annotation.RestController;
+    
+    /**
+    This Proxy class is decorated with @RestController, instead of the original singleton class. Any required method of the original class can be proxied with an internal getInstance call.
+    */
+    @RestController
+    public class ZooController {
+    
+        /** Proxied access to a method of the original / singleton class.
+        public OpeningHours getOpeningHours() {
+            // Access to the original class is achieved with a call to getInstance.
+            return Zoo.getInstance().getOpeningHours();
+        }
     }
-}
-
-```
+    ```
 
 #### Resource Mapping with Annotations
 

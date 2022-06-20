@@ -17,8 +17,10 @@ Your **second** task is the **TouchCORE assisted** conversion of the **Book Stor
 I will now illustrate the steps of a **TouchCORE assisted** conversion to a RESTful service on the example of the Zoo.  
 I will use the previously shown [Zoo REST interface description](interface-zoo.txt).
 
- * Please watch [this short screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
-    * Below you find a recapitulation of the main steps.
+ > Afterwards, your task will be to apply the same *TouchCORE assisted* methodology on a **different** application. Your task is **not** to replicate the Zoo conversion while you are watching.
+
+ * Please now watch [this screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
+    * Below you then find a summary of the main steps.
     * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
 
 ### Load TouchCORE Project
@@ -102,7 +104,7 @@ Now it is your turn!
  * All you need to do is replicate the above steps for the requested app.
  * Limits:
     * You may stop whenever you deem the task successfully completed.
-    * You may also stop after 45 Minutes of refactoring, whatever the state of your refactoring - You are however allowed to continue as long as you want.
+    * You may also stop after 90 Minutes of refactoring, whatever the state of your refactoring - You are however also allowed to continue as long as you want.
  * The target REST interface description for your task is below.
  * Please now run a
 **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
