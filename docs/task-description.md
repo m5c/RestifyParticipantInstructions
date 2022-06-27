@@ -13,6 +13,8 @@ To compile and test your produced REST service:
 
 Now it is your turn! 
 
+ > **WARNING!** Double check that your **screen recording** is still running. Your entire on-screen task activity must be captured.
+
 ### Instructions
 
  * All you need to do is replicate the above steps for the requested app.

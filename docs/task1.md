@@ -1,7 +1,7 @@
 # Task 1
 Your **first** task is the **manual** conversion of **Tic Tac Toe** into a RESTful service.
 
- > **WARNING!** Start your screen recording **now**. Your entire task actvity must be captured. This includes your familiarization with the task description!
+ > **WARNING!** Start your screen recording **now**. Your entire task activity must be captured. This includes your familiarization with the task description!
 
 ## Task Illustration (Restifying the Zoo)
 
@@ -304,6 +304,8 @@ To compile and test your produced REST service:
 ## Your Task
 
 Now it is your turn! 
+
+ > **WARNING!** Make sure that your screen recording is **still running**. Your entire task activity must be captured.
 
 ### Instructions
 
