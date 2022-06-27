@@ -38,9 +38,9 @@ A manual RESTification is a series of five activites:
     * Adjust ```artifactId```. Change suffix to "restified"
     * Adjust ```name```. Change suffix to "restified"
  * Update developer information:
-    * Remove email, organization
-    * Change name **to your personal codename**, e.g. ```blue snail``` (see my email)
-    * Change organization to your university: ```mcgill.ca```
+    * Remove the  ```email``` and ```organizationUrl``` lines
+    * Change ```name``` **to your personal codename**, e.g. ```blue snail``` (see my email)
+    * Change ```organization``` to ```mcgill.ca```
  * Parent:
     * Declare inheritance from spring boot parent.  
 Place below snippet right *after* the ```<license>...</license>``` block:    
