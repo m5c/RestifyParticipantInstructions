@@ -101,6 +101,7 @@ Place below snippet right *after* the ```<license>...</license>``` block:
 </plugin>
 ```
     * **Add** plugin for spring-boot launcher class: (Don't create the new launcher class yet!)  
+Don't forget to adapt the ```mainClass``` tag!  
 ```xml  
 <!-- Spring specific build plugin, produces self contained JAR with default launcher class.-->
 <plugin>
