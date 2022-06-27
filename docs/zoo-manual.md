@@ -63,7 +63,7 @@ Place below snippet right *after* the ```<license>...</license>``` block:
 </dependency>
 ```
  * Final Name
-    * **Add** "restified" to ```finalName``` attribute value
+    * **Add** "Restified" as suffix to the ```finalName``` attribute value
  * Build plugins:
     * **Remove** plugin for legacy launcher class:  
 ```xml
@@ -122,6 +122,7 @@ Don't forget to adapt the ```mainClass``` tag!
 </plugin>
 ```
 
+ > Note: Some changes might note take full effect until you manually reload the ```pom.xml``` file. To do so, right click the ```pom.xml``` file and select: ```Maven -> Reload Project```
 
 ### Java Code Changes
 

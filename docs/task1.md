@@ -54,9 +54,9 @@ A manual RESTification is a series of five activites:
     * Adjust ```artifactId```. Change suffix to "restified"
     * Adjust ```name```. Change suffix to "restified"
  * Update developer information:
-    * Remove email, organization
-    * Change name **to your personal codename**, e.g. ```blue snail``` (see my email)
-    * Change organization to your university: ```mcgill.ca```
+    * Remove the  ```email``` and ```organizationUrl``` lines
+    * Change ```name``` **to your personal codename**, e.g. ```blue snail``` (see my email)
+    * Change ```organization``` to ```mcgill.ca```
  * Parent:
     * Declare inheritance from spring boot parent.  
 Place below snippet right *after* the ```<license>...</license>``` block:    
@@ -79,7 +79,7 @@ Place below snippet right *after* the ```<license>...</license>``` block:
 </dependency>
 ```
  * Final Name
-    * **Add** "restified" to ```finalName``` attribute value
+    * **Add** "Restified" as suffix to the ```finalName``` attribute value
  * Build plugins:
     * **Remove** plugin for legacy launcher class:  
 ```xml
@@ -138,6 +138,7 @@ Don't forget to adapt the ```mainClass``` tag!
 </plugin>
 ```
 
+ > Note: Some changes might note take full effect until you manually reload the ```pom.xml``` file. To do so, right click the ```pom.xml``` file and select: ```Maven -> Reload Project```
 
 ### Java Code Changes
 
