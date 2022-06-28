@@ -14,7 +14,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
 ### Project Layout Overview
 
-A manual RESTification is a series of five activites:
+A manual RESTification is a series of five activities:
 
  * [Loading of legacy sources into Integrated Development Environment (IntelliJ IDE)](#loading-legacy-sources-into-ide)
  * [Adjustment of the build configuration file: ```pom.xml```](#build-configuration-changes)
@@ -24,8 +24,8 @@ A manual RESTification is a series of five activites:
 
 ### Loading Legacy Sources into IDE
 
- * Start IntelliJ
- * Use the "*Open*" option to get to the selection dialogue
+ * Start IntelliJ.
+ * Use the "*Open*" option to get to the selection dialogue:
 ![open-1](captures/intellij/open-1.png)
  * Select the cloned project root folder, then click the "*Open*" button:  
 ![open-2](captures/intellij/open-2.png)
@@ -39,8 +39,8 @@ A manual RESTification is a series of five activites:
     * Adjust ```name```. Change suffix to "restified"
  * Update developer information:
     * Remove the  ```email``` and ```organizationUrl``` lines
-    * Change ```name``` **to your personal codename**, e.g. ```blue snail``` (see my email)
-    * Change ```organization``` to ```mcgill.ca```
+    * Change ```name``` **to your personal codename**, e.g. "```blue snail```" (see my email)
+    * Change ```organization``` to "```mcgill.ca```"
  * Parent:
     * Declare inheritance from spring boot parent.  
 Place below snippet right *after* the ```<license>...</license>``` block:    

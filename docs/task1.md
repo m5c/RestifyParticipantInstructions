@@ -30,7 +30,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
 ### Project Layout Overview
 
-A manual RESTification is a series of five activites:
+A manual RESTification is a series of five activities:
 
  * [Loading of legacy sources into Integrated Development Environment (IntelliJ IDE)](#loading-legacy-sources-into-ide)
  * [Adjustment of the build configuration file: ```pom.xml```](#build-configuration-changes)
@@ -40,8 +40,8 @@ A manual RESTification is a series of five activites:
 
 ### Loading Legacy Sources into IDE
 
- * Start IntelliJ
- * Use the "*Open*" option to get to the selection dialogue
+ * Start IntelliJ.
+ * Use the "*Open*" option to get to the selection dialogue:
 ![open-1](captures/intellij/open-1.png)
  * Select the cloned project root folder, then click the "*Open*" button:  
 ![open-2](captures/intellij/open-2.png)
@@ -55,8 +55,8 @@ A manual RESTification is a series of five activites:
     * Adjust ```name```. Change suffix to "restified"
  * Update developer information:
     * Remove the  ```email``` and ```organizationUrl``` lines
-    * Change ```name``` **to your personal codename**, e.g. ```blue snail``` (see my email)
-    * Change ```organization``` to ```mcgill.ca```
+    * Change ```name``` **to your personal codename**, e.g. "```blue snail```" (see my email)
+    * Change ```organization``` to "```mcgill.ca```"
  * Parent:
     * Declare inheritance from spring boot parent.  
 Place below snippet right *after* the ```<license>...</license>``` block:    
@@ -349,5 +349,7 @@ Below diagram highlights classes and methods of the [legacy Tic Tac Toe applicat
 **A**: The project has no launch configuration by default, therefore the arrow in the top bar is not available. Open the ```RestLauncher``` class instead and click on one of the green triangles, left of the code. 
  * **Q**: I RESTified the application, but when I start it there is a Nullpointer-Exception.  
 **A**: Most likely one of the classes annotated with ```@RestController``` has constructor code that still cannot access ```@Autowired``` fields. E.g. if the constructor calls a method that initializes the service state, that method might require access to an ```@Autowired``` field, but that is only available after class initialization. Do not call that method in the constructor. Tell spring to call it after class initialization, when all fields are initialized. Use the ```@PostConstruct``` annotation. See [```@PostConstruct```](#beans-and-singletons).
- * **Q:** I've made a mistake on project import, how can I start from scratch?  
+ * **Q**: I've made a mistake on project import, how can I start from scratch?  
 Delete the cloned folder, clone the repository again, then make sure to open the project [exactly as shown](#loading-legacy-sources-into-ide).
+ * **Q**: I've modified the ```pom.xml``` file as shown, but IntelliJ still does not seem to know about Spring.  
+**A**: Sometimes the changes made to the ```pom.xml``` are not automatically detected. To force reload the file, right click it, then select ```Maven -> Reload Project```. 

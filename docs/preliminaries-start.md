@@ -128,13 +128,43 @@ For the upcoming two tasks you will need prepared source code to work on.
     * Run: ```mvn clean install```
     * Verify there are no error messages printed to screen.
 
+#### IntelliJ Import Test
+
+Let's verify that you can open and run the test source code with IntelliJ:
+
+ * Start IntelliJ.
+ * Use the "*Open*" option to get to the selection dialogue:
+![open-1](../captures/intellij/open-1.png)
+ * Select the cloned project root folder, then click the "*Open*" button:  
+![open-2](../captures/intellij/open-2.png)
+ * Verify you can start the "Zoo". Open the ```DesktopLauncher``` class and click the green triangle, left of the code:  
+![legacylaunch](../captures/intellij/legacylaunch.png)
+ * Verify there is sample zoo text output, no error messages.
+ * Close IntelliJ again.
+
 ### Prepared Models
 
-Throughout your tasks you will be working with the below TouchCORE model.
+Throughout your tasks you will be working with the below TouchCORE model bundle.
 
  * Download [the model bundle](https://www.cs.mcgill.ca/~mschie3/studymodels/studymodels.zip).
- * Extract them all on your disk.
- * **Do not yet open them** with TouchCORE.
+ * Extract them all on your disk, e.g. your Desktop.
+
+#### TouchCORE Import Test
+
+Let's verify that you can open the test model:
+
+ * [Launch TouchCORE](#touchcore)
+ * Try to open the prepared *Zoo* model (and only the Zoo model!).
+ * Select the load icon.
+![loadicon](../captures/touchcoreui/folder.png)
+ * Navigate to where you extracted the ```zoo.zip``` file.
+    * Use the *Arrow Up* triangular icon to orient, if needed.
+    * Select the ```zoo.core``` file.
+    * Click the green "*Load*" button.  
+![loadcore](../captures/touchcoreui/loadcore.png)
+ * You should see this:
+![zooloaded](../captures/touchcoreui/zooloaded.png)
+ * Close TouchCORE again.
 
 ## Task Illustration
 
