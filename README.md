@@ -5,7 +5,7 @@ Sources for experiment instructions
 ## Usage
 
  * Start server: ```mkdocs serve```
- * Access docs: [http://127.0.0.1:8000/~mschie3/restify](http://127.0.0.1:8000/~mschie3/restify)
+ * Access docs: [http://127.0.0.1:8000/~mschie3/restify/red](http://127.0.0.1:8000/~mschie3/restify/red) or [https://kartoffelquadrat.eu/mirror/red](https://kartoffelquadrat.eu/mirror/red)
 
 ## Internals
 

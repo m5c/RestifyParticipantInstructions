@@ -19,7 +19,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
      * Follow the install instructions.
 
 === "Linux"
-     * Download the [JDK 11.0.5 Linux package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
+     * Download the [JDK 11.0.5 Linux package](../../../1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
      * Extract the file: ```tar xvf *.tar.gz```
      * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html):
         * Set the JAVA_HOME and update your PATH in your ```~/.bashrc``` file:
@@ -28,7 +28,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
         * Open a new terminal or type: ```source ~/.bashrc```
 
 === "Windows"
-     * Download the JDK 11.0.5 [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
+     * Download the JDK 11.0.5 [MSI](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
      * Double click the downloaded file.
      * Follow the install instructions.
 
@@ -59,7 +59,7 @@ You will need the java build tool *Maven*.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](../../../touchcorestudyrelease/touchcore-study-release.zip)
  * Extract the downloaded zip file.
 
  > You **can not** use an older version of TouchCORE. The required features are only contained in the above version.
@@ -149,7 +149,7 @@ Let's verify that you can open and run the test source code with IntelliJ:
 
 Throughout your tasks you will be working with the below TouchCORE model bundle.
 
- * Download [the model bundle](https://www.cs.mcgill.ca/~mschie3/studymodels/studymodels.zip).
+ * Download [the model bundle](../../../studymodels/studymodels.zip).
  * Extract them all on your disk, e.g. your Desktop.
 
 #### TouchCORE Import Test
