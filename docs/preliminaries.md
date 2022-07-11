@@ -14,7 +14,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
  * If the output is **not exactly 11.0.5**, install it:
 
 === "Mac OS"
-     * Download the [JDK 11.0.5 MacOS package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg).
+     * Download the [JDK 11.0.5 MacOS package](../../../1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg).
      * Double click the downloaded ```.pkg``` file.
      * Follow the install instructions.
 
@@ -88,7 +88,8 @@ Any IDE can be used, but we strongly recommend IntelliJ. Also further instructio
 
 ### Zoom
 
-You'll need zoom, to record your task activity. (*)
+You'll need zoom, to record your task activity. (*)  
+Full screen recordings should not reveal personal content. Whenever asked to record, please first close all irrelevant browser tabs and clean your desktop from personal files.
 
  > (*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
 
@@ -101,7 +102,7 @@ You'll need zoom, to record your task activity. (*)
     ![zoom2a](captures/zoom2a.png)
     * Start to share your Desktop.  
     ![zoom2b](captures/zoom2b.png)
-    * Wait some seconds.
+    * Wait a few seconds
     * End the zoom meeting
 
 > **Verify that your *Desktop* recording to file worked. Watch your test recording now!**
@@ -127,6 +128,8 @@ For the upcoming two tasks you will need prepared source code to work on.
     * Open a terminal / command line in the project folder.
     * Run: ```mvn clean install```
     * Verify there are no error messages printed to screen.
+
+ > All code you are working with in this study is open source, and you are welcome to share and redistribute it, beyond the context of this study. However, whatever published should always reference and give credit to the original source and authors.
 
 #### IntelliJ Import Test
 
