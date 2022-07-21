@@ -128,8 +128,14 @@ function deploy
 	# zip and push to server, unzip there
 	rm site.zip
 	zip -r site.zip site
+
+	# push to mcgill
 	scp site.zip mschie3@132.206.51.22:/home/2019/mschie3/public_html
 	ssh mschie3@132.206.51.22 "cd public_html; rm -rf $COLOUR; mkdir -p $COLOUR; unzip -o site.zip; mv site $COLOUR/restify-study"
+
+        # push to KQ
+	scp -P 28518 site.zip root@85.214.243.137:/home/tomcat/webservices/webapps/ROOT/mirror
+	ssh -p 28518 root@85.214.243.137 "cd /home/tomcat/webservices/webapps/ROOT/mirror; rm -rf $COLOUR; mkdir -p $COLOUR; unzip -o site.zip; mv site $COLOUR/restify-study; cd /; chown -R tomcat /home/tomcat/webservices/webapps/ROOT/mirror; chmod -R a+rx /home/tomcat/webservices/webapps/ROOT/mirror"
 }
 
 # Main logic. Build and deploy all colour-groups.

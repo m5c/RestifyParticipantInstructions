@@ -17,7 +17,7 @@ These instructions are linear. Follow the instructions as you read them. Do not 
 
 ## Before you begin
 
-Time itself is a primary metric in this study. Before you start with the two main tasks, please **now** [run through all preliminary tasks](preliminaries). This will ensure that:
+Time itself is a primary metric in this study. Before you start with the two main tasks, please **first** [run through all preliminary tasks](preliminaries). This will ensure that:
 
  * All required software is ready to use on your system.
  * You obtained the skills required for task completion.

@@ -66,14 +66,22 @@ You need a special TouchCORE release, built for this study. Older TouchCORE vers
 
  * Verify you can start it:
 
-=== "Intel/AMD CPU"
+=== "Mac/Linux + Intel/AMD CPU"
      ```java -jar TouchCORE.jar```
 
-=== "Apple M1 CPU"
+=== "Mac + M1 CPU"
      ```softwareupdate --install-rosetta``` (only first time)  
      ```java -jar TouchCORE.jar```
 
-You should see this:  
+=== "Windows"
+     ```java -jar TouchCORE.jar```  
+     If the TouchCORE window shows black bars, or if mouse clicks are displaced from the cursor location, please set *Windows virtual pixel scaling* to ```100%```. Then log out of Windows and log in again:  
+     TouchCORE with black bars:  
+     ![windows-black-bars](captures/windows-black-bars.png)  
+     Windows settings to fix black bars and mouse displacement:  
+     ![windows-pixel-fix](captures/windows-pixel-fix.png)
+
+You should now see this:  
 ![touchcore-start](captures/touchcore-start.png)
 
  > Should the TouchCORE window does not fit your screen, or should you wish to adjust the window dimensions, edit the file ```Settings.txt``` (in the TouchCORE directory) and adjust the lines: ```DisplayWidth=...``` and ```DisplayHeight=...```. Fullscreen mode on M1-Macs is not reliable, do not use it if you have an M1-Mac.
@@ -91,7 +99,9 @@ Any IDE can be used, but we strongly recommend IntelliJ. Also further instructio
 You'll need zoom, to record your task activity. (*)  
 Full screen recordings should not reveal personal content. Whenever asked to record, please first close all irrelevant browser tabs and clean your desktop from personal files.
 
- > (*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
+ > **Important**: We strongly recommend **not to use a multi screen setup**. It is too easy to forget about only one screen being captured! All you activity must be reflected in the recordings, this includes you working with the provided material, e.g. these instructions. If you have multiple screens we strongly recommend to either **deactivate one screen**, or **enable the "mirror" option** in your operation system (so they show the identical content).
+
+(*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
 
  * No worries you can stay offline, Zoom is only required to record your screen to disk.
  * Unless already installed, [install zoom](https://zoom.us/download) now.

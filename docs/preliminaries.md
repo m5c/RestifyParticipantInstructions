@@ -19,7 +19,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
      * Follow the install instructions.
 
 === "Linux"
-     * Download the [JDK 11.0.5 Linux package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
+     * Download the [JDK 11.0.5 Linux package](../../../1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
      * Extract the file: ```tar xvf *.tar.gz```
      * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html):
         * Set the JAVA_HOME and update your PATH in your ```~/.bashrc``` file:
@@ -28,7 +28,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
         * Open a new terminal or type: ```source ~/.bashrc```
 
 === "Windows"
-     * Download the JDK 11.0.5 [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
+     * Download the JDK 11.0.5 [MSI](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
      * Double click the downloaded file.
      * Follow the install instructions.
 
@@ -59,21 +59,29 @@ You will need the java build tool *Maven*.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](../../../touchcorestudyrelease/touchcore-study-release.zip)
  * Extract the downloaded zip file.
 
  > You **can not** use an older version of TouchCORE. The required features are only contained in the above version.
 
  * Verify you can start it:
 
-=== "Intel/AMD CPU"
+=== "Mac/Linux + Intel/AMD CPU"
      ```java -jar TouchCORE.jar```
 
-=== "Apple M1 CPU"
+=== "Mac + M1 CPU"
      ```softwareupdate --install-rosetta``` (only first time)  
      ```java -jar TouchCORE.jar```
 
-You should see this:  
+=== "Windows"
+     ```java -jar TouchCORE.jar```  
+     If the TouchCORE window shows black bars, or if mouse clicks are displaced from the cursor location, please set *Windows virtual pixel scaling* to ```100%```. Then log out of Windows and log in again:  
+     TouchCORE with black bars:  
+     ![windows-black-bars](captures/windows-black-bars.png)  
+     Windows settings to fix black bars and mouse displacement:  
+     ![windows-pixel-fix](captures/windows-pixel-fix.png)
+
+You should now see this:  
 ![touchcore-start](captures/touchcore-start.png)
 
  > Should the TouchCORE window does not fit your screen, or should you wish to adjust the window dimensions, edit the file ```Settings.txt``` (in the TouchCORE directory) and adjust the lines: ```DisplayWidth=...``` and ```DisplayHeight=...```. Fullscreen mode on M1-Macs is not reliable, do not use it if you have an M1-Mac.
@@ -91,7 +99,9 @@ Any IDE can be used, but we strongly recommend IntelliJ. Also further instructio
 You'll need zoom, to record your task activity. (*)  
 Full screen recordings should not reveal personal content. Whenever asked to record, please first close all irrelevant browser tabs and clean your desktop from personal files.
 
- > (*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
+ > **Important**: We strongly recommend **not to use a multi screen setup**. It is too easy to forget about only one screen being captured! All you activity must be reflected in the recordings, this includes you working with the provided material, e.g. these instructions. If you have multiple screens we strongly recommend to either **deactivate one screen**, or **enable the "mirror" option** in your operation system (so they show the identical content).
+
+(*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".
 
  * No worries you can stay offline, Zoom is only required to record your screen to disk.
  * Unless already installed, [install zoom](https://zoom.us/download) now.
@@ -149,7 +159,7 @@ Let's verify that you can open and run the test source code with IntelliJ:
 
 Throughout your tasks you will be working with the below TouchCORE model bundle.
 
- * Download [the model bundle](https://www.cs.mcgill.ca/~mschie3/studymodels/studymodels.zip).
+ * Download [the model bundle](../../../studymodels/studymodels.zip).
  * Extract them all on your disk, e.g. your Desktop.
 
 #### TouchCORE Import Test
