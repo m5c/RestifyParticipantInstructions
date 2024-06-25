@@ -2,8 +2,6 @@
 
 Welcome to the the *RESTify Experiment*.
 
- > **THIS VERSION IS A STATIC SNAPSHOT, CREATED FOR THE MODELS ARTIFACT EVALUATION. UNLESS YOU ARE A REVIEWER, PLEASE [ACCESS THE ORIGINAL ARTIFACT](https://github.com/m5c/RestifyParticipantInstructions)**
-
  * By participating in this study you actively support research, just for that I already would like to thank you!
  * You will be completely anonymous to anyone outside the study. For any ethical concerns or questions, please contact [McGill's *Research Ethics Board*](mailto:lynda.mcneil@mcgill.ca). The study reference is:  
 ```REB-21-03-009```
