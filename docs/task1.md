@@ -19,7 +19,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  > Afterwards, your task will be to apply the same **manual** methodology on a **different** application. Your task is **not** to replicate the Zoo conversion while you are watching.
 
- * Please watch [this screencast](../../../restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
+ * Please watch [this screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/IntelliJ-1080p.mp4) where I demonstrate and explain the required code changes.
     * Below you find a summary of the main steps.
     * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
  * Additionally you can conveniently inspect both versions and the changes made:
@@ -320,7 +320,7 @@ Now it is your turn!
 **manual** conversion of **Tic Tac Toe** into a RESTful service.
 ### Legacy Application Details
 
-Below diagram highlights classes and methods of the [legacy Tic Tac Toe application](https://github.com/kartoffelquadrat/XoxInternals), relevant to your RESTification task. For more information on theses methods, also consult the [Tic Tac Toe online documentation](https://kartoffelquadrat.github.io/XoxInternals/eu/kartoffelquadrat/xoxinternals/package-summary.html).  
+Below diagram highlights classes and methods of the [legacy Tic Tac Toe application](https://github.com/m5c/XoxInternals), relevant to your RESTification task. For more information on theses methods, also consult the [Tic Tac Toe online documentation](https://m5c.github.io/XoxInternals/eu/kartoffelquadrat/xoxinternals/package-summary.html).  
 ![xox-classes](../captures/xox-bl.png)
 
 

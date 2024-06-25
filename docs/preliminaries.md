@@ -14,12 +14,12 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
  * If the output is **not exactly 11.0.5**, install it:
 
 === "Mac OS"
-     * Download the [JDK 11.0.5 MacOS package](../../../1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg).
+     * Download the [JDK 11.0.5 MacOS package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg).
      * Double click the downloaded ```.pkg``` file.
      * Follow the install instructions.
 
 === "Linux"
-     * Download the [JDK 11.0.5 Linux package](../../../1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
+     * Download the [JDK 11.0.5 Linux package](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz).
      * Extract the file: ```tar xvf *.tar.gz```
      * [Add the contained commands to your path](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html):
         * Set the JAVA_HOME and update your PATH in your ```~/.bashrc``` file:
@@ -28,7 +28,7 @@ You will need Java, version ```11.0.5```. Unfortunately it has to be **exactly**
         * Open a new terminal or type: ```source ~/.bashrc```
 
 === "Windows"
-     * Download the JDK 11.0.5 [MSI](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
+     * Download the JDK 11.0.5 [MSI](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi) or [ZIP](https://www.cs.mcgill.ca/~mschie3/1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip) installer.
      * Double click the downloaded file.
      * Follow the install instructions.
 
@@ -59,7 +59,7 @@ You will need the java build tool *Maven*.
 
 You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.
 
- * Download the study release here: [TouchCORE (RESTify Study / JAR)](../../../touchcorestudyrelease/touchcore-study-release.zip)
+ * Download the study release here: [TouchCORE (RESTify Study / JAR)](https://www.cs.mcgill.ca/~mschie3/touchcorestudyrelease/touchcore-study-release.zip)
  * Extract the downloaded zip file.
 
  > You **can not** use an older version of TouchCORE. The required features are only contained in the above version.
@@ -127,12 +127,12 @@ For the upcoming two tasks you will need prepared source code to work on.
 
  * Prepare a dedicated folder for your tasks, e.g. on your Desktop.
  * Clone these three repositories, but do not yet inspect their content:
-    * [The Zoo](https://github.com/kartoffelquadrat/Zoo):  
-```git clone https://github.com/kartoffelquadrat/Zoo.git```
-    * [The Book Store](https://github.com/kartoffelquadrat/BookStoreInternals):  
-```git clone https://github.com/kartoffelquadrat/BookStoreInternals.git```
-    * [Tic Tac Toe](https://github.com/kartoffelquadrat/XoxInternals):  
-```git clone https://github.com/kartoffelquadrat/XoxInternals.git```
+    * [The Zoo](https://github.com/m5c/Zoo):  
+```git clone https://github.com/m5c/Zoo.git```
+    * [The Book Store](https://github.com/m5c/BookStoreInternals):  
+```git clone https://github.com/m5c/BookStoreInternals.git```
+    * [Tic Tac Toe](https://github.com/m5c/XoxInternals):  
+```git clone https://github.com/m5c/XoxInternals.git```
  * You should now have three new directories in your study folder:
  * Finally, **for each** folder, verify you can build the code as is:
     * Open a terminal / command line in the project folder.
@@ -204,11 +204,11 @@ The Zoo is a minimal java desktop application that offers some demo functionalit
  * Looking up details for a specific animal, identified by name.
  * Adding a new animal to the Zoo.
 
-The above functionality is all provided by a singleton class: [```Zoo```](https://kartoffelquadrat.github.io/Zoo/eu/kartoffelquadrat/zoo/Zoo.html).  
+The above functionality is all provided by a singleton class: [```Zoo```](https://m5c.github.io/Zoo/eu/kartoffelquadrat/zoo/Zoo.html).  
 
  * For convenience, here is a class diagram of the ```Zoo``` class:  
 ![zoo](../captures/zoo-bl.png)
- * You can also inspect the [DesktopLauncher](https://github.com/kartoffelquadrat/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java), to see how to invoke above methods.
+ * You can also inspect the [DesktopLauncher](https://github.com/m5c/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java), to see how to invoke above methods.
  * Finally you can also run the provided Zoo implementation as is, to see a demo of above functionality:
     * Open a terminal in your cloned Zoo project
     * Type: ```mvn clean package exec:java```

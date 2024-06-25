@@ -19,7 +19,7 @@ I will use the previously shown [Zoo REST interface description](interface-zoo.t
 
  > Afterwards, your task will be to apply the same *TouchCORE assisted* methodology on a **different** application. Your task is **not** to replicate the Zoo conversion while you are watching.
 
- * Please now watch [this screencast](../../../restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
+ * Please now watch [this screencast](https://www.cs.mcgill.ca/~mschie3/restifyvideos/TouchCORE-1080p.mp4) where I demonstrate and explain TouchCORE usage.
     * Below you then find a summary of the main steps.
     * If anything does not work as expected, take a look at the [Troubleshoot section](#troubleshoot).
 
@@ -112,7 +112,7 @@ Now it is your turn!
 **TouchCORE assisted** conversion of the **Book Store** into a RESTful service.
 ### Legacy Application Details
 
-Below diagram highlights classes and methods of the [legacy Book Store application](https://github.com/kartoffelquadrat/BookStoreInternals), relevant to your RESTification task. For more information on theses methods, also consult the [Book Store online documentation](https://kartoffelquadrat.github.io/BookStoreInternals/eu/kartoffelquadrat/bookstoreinternals/package-summary.html).  
+Below diagram highlights classes and methods of the [legacy Book Store application](https://github.com/m5c/BookStoreInternals), relevant to your RESTification task. For more information on theses methods, also consult the [Book Store online documentation](https://m5c.github.io/BookStoreInternals/eu/kartoffelquadrat/bookstoreinternals/package-summary.html).  
 ![bookstore-classes](../captures/bs-bl.png)
 
 

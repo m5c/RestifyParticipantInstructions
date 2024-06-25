@@ -20,6 +20,7 @@ function build
 	mkdocs build
 
         # create backup
+        rm -rf site-$COLOUR
         cp -rv site site-$COLOUR
 }
 
@@ -145,7 +146,7 @@ function deploy
 COLOURS=('red' 'green' 'blue' 'yellow')
 for COLOUR in "${COLOURS[@]}"; do
     build
-    deploy
+#     deploy
 done
 
 # Update browser tabs and link location
