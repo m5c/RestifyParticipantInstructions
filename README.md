@@ -2,7 +2,18 @@
 
 Sources for experiment instructions. The markdown sources compile to four websites, one for each experiment group.
 
+ > **THIS VERSION IS A STATIC SNAPSHOT, CREATED FOR THE MODELS ARTIFACT EVALUATION. UNLESS YOU ARE A REVIEWER, PLEASE [ACCESS THE ORIGINAL ARTIFACT](https://github.com/m5c/RestifyParticipantInstructions)**
+
 ## Usage
+
+### Official Deployment
+
+Original versions of the participant instructions, as used by each of the four experiment groups are accessible here:
+
+ * [Red](https://www.cs.mcgill.ca/~mschie3/red/restify-study/)
+ * [Green](https://www.cs.mcgill.ca/~mschie3/green/restify-study/)
+ * [Blue](https://www.cs.mcgill.ca/~mschie3/blue/restify-study/)
+ * [Yellow](https://www.cs.mcgill.ca/~mschie3/yellow/restify-study/)
 
 ### Local deployment (single group)
 
