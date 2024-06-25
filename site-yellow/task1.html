@@ -1,0 +1,1103 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.cs.mcgill.ca/~mschie3/restify/task1.html">
+      
+      
+        <link rel="prev" href="preliminaries.html">
+      
+      
+        <link rel="next" href="task2.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Task 1 - McGill CS RESTify Experiment</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="mcgill" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="McGill CS RESTify Experiment" class="md-header__button md-logo" aria-label="McGill CS RESTify Experiment" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            McGill CS RESTify Experiment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="McGill CS RESTify Experiment" class="md-nav__button md-logo" aria-label="McGill CS RESTify Experiment" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    McGill CS RESTify Experiment
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="preliminaries.html" class="md-nav__link">
+        Preliminaries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="task1.html" class="md-nav__link md-nav__link--active">
+        Task 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-illustration-restifying-the-zoo" class="md-nav__link">
+    Task Illustration (Restifying the Zoo)
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Illustration (Restifying the Zoo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-layout-overview" class="md-nav__link">
+    Project Layout Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-legacy-sources-into-ide" class="md-nav__link">
+    Loading Legacy Sources into IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-configuration-changes" class="md-nav__link">
+    Build Configuration Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-code-changes" class="md-nav__link">
+    Java Code Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Java Code Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-conflicting-files" class="md-nav__link">
+    Remove conflicting files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launcher" class="md-nav__link">
+    Launcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beans-and-singletons" class="md-nav__link">
+    Beans and Singletons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-mapping-with-annotations" class="md-nav__link">
+    Resource Mapping with Annotations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run" class="md-nav__link">
+    Build and Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-and-test" class="md-nav__link">
+    Compile and Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-task" class="md-nav__link">
+    Your Task
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Task">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-application-details" class="md-nav__link">
+    Legacy Application Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-description-tic-tac-toe-resources-and-methods" class="md-nav__link">
+    Interface Description: Tic Tac Toe Resources and Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task2.html" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="upload.html" class="md-nav__link">
+        Upload
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-illustration-restifying-the-zoo" class="md-nav__link">
+    Task Illustration (Restifying the Zoo)
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Illustration (Restifying the Zoo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-layout-overview" class="md-nav__link">
+    Project Layout Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-legacy-sources-into-ide" class="md-nav__link">
+    Loading Legacy Sources into IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-configuration-changes" class="md-nav__link">
+    Build Configuration Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-code-changes" class="md-nav__link">
+    Java Code Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Java Code Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-conflicting-files" class="md-nav__link">
+    Remove conflicting files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launcher" class="md-nav__link">
+    Launcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beans-and-singletons" class="md-nav__link">
+    Beans and Singletons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-mapping-with-annotations" class="md-nav__link">
+    Resource Mapping with Annotations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run" class="md-nav__link">
+    Build and Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-and-test" class="md-nav__link">
+    Compile and Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-task" class="md-nav__link">
+    Your Task
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Task">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-application-details" class="md-nav__link">
+    Legacy Application Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-description-tic-tac-toe-resources-and-methods" class="md-nav__link">
+    Interface Description: Tic Tac Toe Resources and Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="task-1">Task 1</h1>
+<p>Your <strong>first</strong> task is the <strong>manual</strong> conversion of <strong>Tic Tac Toe</strong> into a RESTful service.</p>
+<blockquote>
+<p><strong>WARNING!</strong> Start your <strong>screen recording</strong> now. Your entire on-screen task activity must be captured. This includes your familiarization with the task description!</p>
+</blockquote>
+<h2 id="task-illustration-restifying-the-zoo">Task Illustration (Restifying the Zoo)</h2>
+<p>I will now illustrate the steps of a <strong>manual</strong> conversion to a RESTful service on the example of the Zoo.<br />
+I will use the previously shown <a href="interface-zoo.txt">Zoo REST interface description</a>.</p>
+<blockquote>
+<p>Afterwards, your task will be to apply the same <strong>manual</strong> methodology on a <strong>different</strong> application. Your task is <strong>not</strong> to replicate the Zoo conversion while you are watching.</p>
+</blockquote>
+<ul>
+<li>Please watch <a href="../../../restifyvideos/IntelliJ-1080p.mp4">this screencast</a> where I demonstrate and explain the required code changes.<ul>
+<li>Below you find a summary of the main steps.</li>
+<li>If anything does not work as expected, take a look at the <a href="#troubleshoot">Troubleshoot section</a>.</li>
+</ul>
+</li>
+<li>Additionally you can conveniently inspect both versions and the changes made:<ul>
+<li>Switch to <em>Desktop Zoo</em> version: <code>git checkout master</code> or <a href="https://github.com/kartoffelquadrat/Zoo/tree/master/src/main/java/eu/kartoffelquadrat/zoo">inspect code online</a>.</li>
+<li>Switch to <em>RESTified Zoo</em> version: <code>git checkout RESTified</code> or <a href="https://github.com/kartoffelquadrat/Zoo/tree/RESTified/src/main/java/eu/kartoffelquadrat/zoo">inspect code online</a>.</li>
+<li>Compare versions: <code>git diff master..RESTified</code> or <a href="https://github.com/kartoffelquadrat/Zoo/commit/8fe7675b65f795897910358ed089ea2a0e22aeff">inspect changes online</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="project-layout-overview">Project Layout Overview</h3>
+<p>A manual RESTification is a series of five activities:</p>
+<ul>
+<li><a href="#loading-legacy-sources-into-ide">Loading of legacy sources into Integrated Development Environment (IntelliJ IDE)</a></li>
+<li><a href="#build-configuration-changes">Adjustment of the build configuration file: <code>pom.xml</code></a></li>
+<li><a href="#launcher">Replacement of the launcher class</a></li>
+<li><a href="#beans-and-singletons">Removal of singleton pattern or creation of proxy controllers</a></li>
+<li><a href="#resource-mapping-with-annotations">Decoration of REST controllers and target functions with Spring annotations</a></li>
+</ul>
+<h3 id="loading-legacy-sources-into-ide">Loading Legacy Sources into IDE</h3>
+<ul>
+<li>Start IntelliJ.</li>
+<li>Use the "<em>Open</em>" option to get to the selection dialogue:
+<img alt="open-1" src="captures/intellij/open-1.png" /></li>
+<li>Select the cloned project root folder, then click the "<em>Open</em>" button:<br />
+<img alt="open-2" src="captures/intellij/open-2.png" /></li>
+</ul>
+<h3 id="build-configuration-changes">Build Configuration Changes</h3>
+<blockquote>
+<p>Want to see all Zoo-RESTify <code>pom.xml</code> changes at a glance? Run <code>git diff master..RESTified pom.xml</code>. Green lines were added for RESTification, red lines were removed.</p>
+</blockquote>
+<ul>
+<li>Artifact properties:<ul>
+<li>Adjust <code>artifactId</code>. Change suffix to "restified"</li>
+<li>Adjust <code>name</code>. Change suffix to "restified"</li>
+</ul>
+</li>
+<li>Update developer information:<ul>
+<li>Remove the  <code>email</code> and <code>organizationUrl</code> lines</li>
+<li>Change <code>name</code> <strong>to your personal codename</strong>, e.g. "<code>blue snail</code>" (see my email)</li>
+<li>Change <code>organization</code> to "<code>mcgill.ca</code>"</li>
+</ul>
+</li>
+<li>Parent:<ul>
+<li>Declare inheritance from spring boot parent.<br />
+Place below snippet right <em>after</em> the <code>&lt;license&gt;...&lt;/license&gt;</code> block:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">&lt;!-- this parent block lets this maven project extend a prepared spring specific template.--&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;parent&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>2.3.0.RELEASE<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/parent&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>Dependencies:<ul>
+<li>Declare dependency towards spring boot artifact:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">&lt;!-- This block adds spring boot as a dependency, so we can use the parent pom configuration and non-standard annotations.--&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>2.3.0.RELEASE<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>Final Name<ul>
+<li><strong>Add</strong> "Restified" as suffix to the <code>finalName</code> attribute value</li>
+</ul>
+</li>
+<li>Build plugins:<ul>
+<li><strong>Remove</strong> plugin for legacy launcher class:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- specify main class for exec goal --&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>exec-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>1.6.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&lt;executions&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;execution&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">&lt;goals&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">&lt;goal&gt;</span>java<span class="nt">&lt;/goal&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&lt;/goals&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&lt;/execution&gt;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nt">&lt;/executions&gt;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">&lt;mainClass&gt;</span>eu.kartoffelquadrat.zoo.DesktopLauncher<span class="nt">&lt;/mainClass&gt;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></li>
+<li><strong>Remove</strong> plugin for legacy compilation to self contained JAR:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- specify main class for JAR manifest--&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>maven-jar-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>3.2.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;archive&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nt">&lt;manifest&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&lt;mainClass&gt;</span>eu.kartoffelquadrat.zoo.DesktopLauncher<span class="nt">&lt;/mainClass&gt;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&lt;/manifest&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">&lt;/archive&gt;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></li>
+<li><strong>Add</strong> plugin for spring-boot launcher class: (Don't create the new launcher class yet!)<br />
+Don't forget to adapt the <code>mainClass</code> tag!<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">&lt;!-- Spring specific build plugin, produces self contained JAR with default launcher class.--&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;fork&gt;</span>true<span class="nt">&lt;/fork&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="cm">&lt;!-- Replace &quot;zoo&quot; by actual package name in next line! --&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&lt;mainClass&gt;</span>eu.kartoffelquadrat.zoo.RestLauncher<span class="nt">&lt;/mainClass&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&lt;executions&gt;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">&lt;execution&gt;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="nt">&lt;goals&gt;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="nt">&lt;goal&gt;</span>repackage<span class="nt">&lt;/goal&gt;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">&lt;/goals&gt;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">&lt;/execution&gt;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="nt">&lt;/executions&gt;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note: Some changes might note take full effect until you manually reload the <code>pom.xml</code> file. To do so, right click the <code>pom.xml</code> file and select: <code>Maven -&gt; Reload Project</code></p>
+</blockquote>
+<h3 id="java-code-changes">Java Code Changes</h3>
+<blockquote>
+<p><strong>Hint</strong>: You can use <code>git</code> to see all <code>java</code> changes made to the Zoo for manual RESTification.<br />
+Run: <code>git diff master..RESTified *java</code><br />
+Green lines were added for RESTification, red lines were removed.</p>
+</blockquote>
+<h4 id="remove-conflicting-files">Remove conflicting files</h4>
+<p>You have to delete two things:</p>
+<ul>
+<li>The legacy launcher, located in <code>src/main/java/eu/karotffelquadrat/*/DesktopLauncher.java</code></li>
+<li>The legacy unit tests. Remove the entire test folder: <code>src/test</code><br />
+(This part has been skipped in the Zoo explanatory video, since there were no test classes)</li>
+</ul>
+<h4 id="launcher">Launcher</h4>
+<p>First thing to do is the creation of a new launcher class. It should be placed anywhere within the <code>src/main/java/eu/kartoffelquadrat/...</code> directory. </p>
+<ul>
+<li>
+<p>Create it by right clicking on the <code>eu.kartoffelquadrat...</code> package:<br />
+<img alt="create" src="captures/intellij/launcher.png" /></p>
+</li>
+<li>
+<p>Enter <code>RestLauncher</code> as class name, <strong>do not</strong> type the <code>.java</code> extension. IntelliJ will handle that for you.<br />
+<img alt="entername" src="captures/intellij/entername.png" /></p>
+</li>
+</ul>
+<p>Code of the <code>RestLauncher.java</code> class. (Replaces the legacy launcher)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">eu.kartoffelquadrat.zoo</span><span class="p">;</span><span class="w">  </span><span class="o">&lt;-----</span><span class="w"> </span><span class="n">Replace</span><span class="w"> </span><span class="s">&quot;zoo&quot;</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">whatever</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">on</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.SpringApplication</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="cm">/**</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="cm"> * This class powers up Spring and ensures the annotated controllers are detected.</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="cm"> */</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="nd">@SpringBootApplication</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RestLauncher</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">RestLauncher</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="beans-and-singletons">Beans and Singletons</h4>
+<ul>
+<li>Spring creates new instances of classes annotated with:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@RestController</span>
+</code></pre></div></li>
+<li>The existing singleton pattern is bypassed, since Spring uses reflection to gain constructor access, even if the declared constructor is private.</li>
+<li>Having both <code>@RestController</code> and a <code>getInstance</code> method in the same class is dangerous.<br />
+There are two ways to side-step inconsistency issues:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Autowiring (Recommended)</label><label for="__tabbed_1_2">Proxy Classes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>If you chose <em>Autowiring</em>, you do not create new classes. You directly annotate the relevant existing classes with <code>@RestController</code>.</li>
+<li>This tells Spring to create one instance per annotated class, using a default constructor.</li>
+<li>Any existing singleton pattern is therefore obsolete: If you annotated a class with <code>@RestController</code>, make sure to remove the singleton pattern (the <code>getInstance</code> method) and make the default constructor public.</li>
+<li>Whenever an instance of such an annotated class is required, you can obtain the spring maintained instance with <code>@Autowired</code>.<br />
+Example:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">eu.kartoffelquadrat.zoo</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nd">@RestController</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooController</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="cm">/*</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="cm">    @Autowired ensures the zoo field is set after instantiation of FooController, given Zoo is annotated with @RestController.</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="cm">    */</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="nd">@Autowired</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="n">Zoo</span><span class="w"> </span><span class="n">zoo</span><span class="p">;</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">    </span><span class="c1">// Here you can access the zoo instance using the local, autowired field (instead of calling the obsolete getInstance method)</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">    </span><span class="n">zoo</span><span class="p">.</span><span class="na">getOpeningHours</span><span class="p">();</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div><blockquote>
+<p>Autowired fields are only accessible <strong>after</strong> class instantiation. Do not invoke methods that require autowired values from a constructor, or you will get a <code>NullPointerException</code> at runtime. Instead annotate those methods with <code>@PostConstruct</code>. This advises spring to invoke a method after class instantiation.</p>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>If you chose <em>Proxy Classes</em>, you do annotate the existing classes. You instead replicate every existing relevant class and place all annotations in the replica. The replica acts as proxy that forwards every method call to the original, using <code>getInstance()</code>.</li>
+<li>Keep the singleton pattern in the original java classes. They remain untouched. Instead place an <code>@RestController</code> annotation in every proxy class created.<br />
+Example:<br />
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">eu.kartoffelquadrat.zoo</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="cm">/**</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="cm">This Proxy class is decorated with @RestController, instead of the original singleton class. Any required method of the original class can be proxied with an internal getInstance call.</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="cm">*/</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="nd">@RestController</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ZooController</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="o">/**</span><span class="w"> </span><span class="n">Proxied</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">singleton</span><span class="w"> </span><span class="kd">class</span><span class="err">.</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="err">//</span> <span class="nc">Mapping</span><span class="w"> </span><span class="n">annotation</span><span class="w"> </span><span class="n">goes</span><span class="w"> </span><span class="n">here</span><span class="p">.</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">OpeningHours</span><span class="w"> </span><span class="nf">getOpeningHours</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="c1">// Access to the original class is achieved with a call to getInstance.</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Zoo</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">getOpeningHours</span><span class="p">();</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></li>
+</ul>
+</div>
+</div>
+</div>
+<h4 id="resource-mapping-with-annotations">Resource Mapping with Annotations</h4>
+<blockquote>
+<p>Note: Below annotation syntax can only be used in classes annotated with <code>@RestController</code>.</p>
+</blockquote>
+<ul>
+<li>
+<p>Resource mappings (these annotations decorate functions)</p>
+<ul>
+<li>Annotations types:  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Get</th>
+<th>Put</th>
+<th>Post</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@GetMapping("...")</code></td>
+<td><code>@PutMapping("...")</code></td>
+<td><code>@PostMapping("...")</code></td>
+<td><code>@DeleteMapping("...")</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Arguments:<ul>
+<li>Static: Full resource path within quotes, e.g.: <code>"zoo/animals"</code></li>
+<li>Dynamic: Full resource path within quotes. Any dynamic placeholder on path is marked <em>by curly brackets</em>, e.g.:<code>"zoo/animals/{animalname}"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Parameter mapping (these annotations decorate function parameters)</p>
+<ul>
+<li>Pathvariable:<br />
+<code>@PathVariable("animalname")</code></li>
+<li>Request body:<br />
+<code>@RequestBody</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="build-and-run">Build and Run</h3>
+<p>These instructions are to build and run from command line. While developing in IntelliJ you can safly use the "green triangle button" next to your new spring launcher class.<br />
+<img alt="greenbutton" src="captures/intellij/greenbutton.png" /></p>
+<p>The first time you start your REST application you might see a warning about incoming connections. Select "<em>Allow</em>".
+<img alt="firewall" src="captures/intellij/firewall.png" />  </p>
+<p>At some point you also need to build your application into a self contained artifact:  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Mac OS / Linux</label><label for="__tabbed_2_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Build a self contained executable jar file: <code>mvn clean package</code></li>
+<li>Run the jar file: <code>java -jar target/zoorestified.jar</code><blockquote>
+<p><code>zoorestified</code> is the name you provided as <code>finalName</code> in your <code>pom.xml</code>.</p>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Build a self contained executable jar file: <code>mvn clean package</code></li>
+<li>Run the jar file: <code>java -jar target\zoorestified.jar</code><blockquote>
+<p><code>zoorestified</code> is the name you provided as <code>finalName</code> in your <code>pom.xml</code>.</p>
+</blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="compile-and-test">Compile and Test</h3>
+<p>To compile and test your produced REST service:</p>
+<ul>
+<li>Compile your project with: <code>mvn clean package</code></li>
+<li>Open the newly generated <code>target</code> folder.</li>
+<li>Run the generated JAR file with: <code>java -jar YOUR-SERVICE-NAME.jar</code></li>
+<li>Test access with your browser. You can directly access any <em>[GET]</em> resource by typing this into the URL bar:<br />
+<code>http://127.0.0.1:8080/zoo/animals</code><br />
+<em>(where <code>zoo/animals</code> is replaced by a valid GET-enabled resource of your application)</em></li>
+</ul>
+<h2 id="your-task">Your Task</h2>
+<p>Now it is your turn! </p>
+<blockquote>
+<p><strong>WARNING!</strong> Double check that your <strong>screen recording</strong> is still running. Your entire on-screen task activity must be captured.</p>
+</blockquote>
+<h3 id="instructions">Instructions</h3>
+<ul>
+<li>All you need to do is replicate the above steps for the requested app.</li>
+<li>Limits:<ul>
+<li>You may stop whenever you deem the task successfully completed.</li>
+<li>You may also stop after 90 Minutes of refactoring, whatever the state of your refactoring - You are however also allowed to continue as long as you want.</li>
+</ul>
+</li>
+<li>The target REST interface description for your task is below.</li>
+<li>Please now run a
+<strong>manual</strong> conversion of <strong>Tic Tac Toe</strong> into a RESTful service.</li>
+</ul>
+<h3 id="legacy-application-details">Legacy Application Details</h3>
+<p>Below diagram highlights classes and methods of the <a href="https://github.com/kartoffelquadrat/XoxInternals">legacy Tic Tac Toe application</a>, relevant to your RESTification task. For more information on theses methods, also consult the <a href="https://kartoffelquadrat.github.io/XoxInternals/eu/kartoffelquadrat/xoxinternals/package-summary.html">Tic Tac Toe online documentation</a>.<br />
+<img alt="xox-classes" src="../captures/xox-bl.png" /></p>
+<h3 id="interface-description-tic-tac-toe-resources-and-methods">Interface Description: Tic Tac Toe Resources and Methods</h3>
+<ul>
+<li>Your interface should begin with a top-level resource "<em>xox</em>", offering two methods.<ul>
+<li>A <em>[GET]</em> request to the "<em>xox</em>" resource should result in a lookup of all currently running games, as a list of game-identifiers.</li>
+<li>A <em>[POST]</em> request to the "<em>xox</em>" resource should allow adding of a new game instance. The identifier is generated on server side and does not need to be provided, however the request body should provide all parameters required as game settings.</li>
+</ul>
+</li>
+<li>The "<em>xox</em>" resource should possess a dynamic placeholder subresource, representing individual game instances by identifier.<ul>
+<li>A <em>[GET]</em> request on the identifier placeholder resource should retrieve scoring information for the targeted game.</li>
+<li>A <em>[DELETE]</em> request on the identifier placeholder resource should remove the game from the list of all games.</li>
+</ul>
+</li>
+<li>The dynamic resource representing games by their identifier should have two subresources: "<em>players</em>" and "<em>board</em>".<ul>
+<li>A <em>[GET]</em> request on the "<em>players</em>" resource should return a list of player names involved into the specified game. The game instance is in this case provided by value of the parent placeholder resource.</li>
+<li>A <em>[GET]</em> request on the "<em>board</em>" resource should return a snapshot of the current game board layout, is to say which cells empty or occupied by a given player. The game instance is in this case provided by value of the parent placeholder resource.</li>
+</ul>
+</li>
+<li>The "<em>players</em>" resource should possess a dynamic placeholder resource, encoding the name of a given player. This resource has no methods, but in its turn a subresource "<em>actions</em>".<ul>
+<li>A <em>[GET]</em> request on actions should return an array of possible actions for a given player in a given game. Each action represents the claim of an available field. The required player  name is provided by the parent dynamic resource representing a player name and the game instance is provided by the value of the dynamic sub resource of the root resource.</li>
+</ul>
+</li>
+<li>The "<em>actions</em>" resource should possess a dynamic placeholder resource that serves to identify the a specific selection of the actions available to a given player in a given game.<ul>
+<li>A <em>[POST]</em> request on that dynamic placeholder resource should allow the selection of a given action, to perform it. The precise action is then identified by an int value taken by the dynamic resource, representing the position in the array of all possible actions. The required player  name is provided by the parent dynamic resource representing a player name and the game instance is provided by the value of the dynamic sub resource of the root resource.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Click <a href="../interface-xox.txt" download>here to download interface description</a> as file.</p>
+</blockquote>
+<h2 id="troubleshoot">Troubleshoot</h2>
+<ul>
+<li><strong>Q</strong>: I open the project with IntelliJ, but everything is underlined in red.<br />
+<strong>A</strong>: The projet was not correctly opened. There are multiple potential fixes:<br />
+    Option 1) Reload <code>pom.xml</code>: Right click the file, then select <code>Maven -&gt; Reload Project</code>.<br />
+<img alt="reload" src="../captures/intellij/reloadmaven.png" />
+    Option 2) Verify the JDK version: Select <code>File</code> -&gt; <code>Project Structure...</code>. Verify <code>11.0.5</code> is selected in the <em>Project</em> and <em>SDKs</em> tab:<br />
+<img alt="sdk1" src="../captures/intellij/sdk1.png" /><br />
+<img alt="sdk2" src="../captures/intellij/sdk2.png" /><br />
+    Option 3) Invalidate IntelliJ caches: Select <code>File</code> -&gt; <code>Invalidate Caches...</code>. Then select the first two checkboxes:<br />
+<img alt="invalidate1" src="../captures/intellij/invalidate1.png" /><br />
+<img alt="invalidate2" src="../captures/intellij/invalidate2.png" />
+    Option 4) Delete the cloned folder, clone the repository again, then make sure to open the project <a href="#loading-legacy-sources-into-ide">exactly as shown</a>.</li>
+<li><strong>Q</strong>: I cannot compile / run the project, the green button is greyed out.<br />
+<strong>A</strong>: The project has no launch configuration by default, therefore the arrow in the top bar is not available. Open the <code>RestLauncher</code> class instead and click on one of the green triangles, left of the code. </li>
+<li><strong>Q</strong>: I RESTified the application, but when I start it there is a Nullpointer-Exception.<br />
+<strong>A</strong>: Most likely the constructor code in one of the classes annotated with <code>@RestController</code> invokes a call to an <code>@Autowired</code> field. Autowiring is only available after class initialization (after the constructor). Do not call any method with access to autowired fields in a constructor. Instead tell spring to call it after class initialization. Use the <code>@PostConstruct</code> annotation. See <a href="#beans-and-singletons"><code>@PostConstruct</code></a>.</li>
+<li><strong>Q</strong>: I've made a mistake on project import, how can I start from scratch?<br />
+Delete the cloned folder, clone the repository again, then make sure to open the project <a href="#loading-legacy-sources-into-ide">exactly as shown</a>.</li>
+<li><strong>Q</strong>: I've modified the <code>pom.xml</code> file as shown, but IntelliJ still does not seem to know about Spring.<br />
+<strong>A</strong>: Sometimes the changes made to the <code>pom.xml</code> are not automatically detected. (See first question, <code>pom.xml</code>reload```.)</li>
+<li><strong>Q</strong>: IntelliJ asks me whether I want to trust the project sources. Should I?<br />
+<strong>A</strong>: Yes. This is just a security mechanism to prevent malicious code being executed on project import. The provided sources are all from us and can be trusted.<br />
+<img alt="trust" src="../captures/intellij/trust.png" /></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

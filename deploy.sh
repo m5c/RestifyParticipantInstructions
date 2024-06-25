@@ -18,6 +18,9 @@ function build
 
 	# build locally
 	mkdocs build
+
+        # create backup
+        cp -rv site site-$COLOUR
 }
 
 # Patches the task page contents (task1/2) and task descriptions on landing page (index)

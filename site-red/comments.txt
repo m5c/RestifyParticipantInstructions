@@ -1,0 +1,42 @@
+Please write a short statement for each of the below questions and submit this file along with your other study material. If a question is not applicable or you have noting to mention, just leave it empty.
+
+1) Question: Which of the tasks did you perceive as easier, one or two?
+
+Your answer: ...
+
+2) Question: Which of your task solutions are you more confident to comply to the requested interface descriptions, one or two?
+
+Your answer: ...
+
+3) Question: Which approach would you prefer to apply for your own programming project, if you were to RESTify a legacy application? Manual or Tool-Assisted?
+
+Your answer: ...
+
+4) Question: Were there any major complications that you encountered during your tasks?
+
+Your answer: ...
+
+5) Question: Was there any task or task activity you felt spending an unproportionally high amount of time on. 
+
+Your answer: ...
+
+6) Question: Do you feel like you understood the tasks / what was requested?
+
+Your answer: ...
+
+7) Question: Which of the methodologies (TouchCORE vs. IntelliJ) did you experience as more intuitive and why ?
+
+Your answer: ...
+
+8) Question: For which task methodology are you more confident that your handed in solution passes out unit tests  and why?
+
+Your answer: ...
+
+9) Question: Which of the provided solutions are you more likely to apply for your personal projects in the future and why?
+
+Your answer: ...
+
+
+8) Is there anything else about this study you want to comment?
+
+Your answer...

@@ -1,0 +1,24 @@
+
+
+### Interface Description: Book Store Resources and Methods
+
+
+ * Your interface should begin with a top-level resource "*bookstore*", not offering any methods.  
+ * "*bookstore*" has two subresources, "*isbns*" and "*stocklocations*", both offering a *[GET]* method.  
+    * A *[GET]* request to *"isbns"* should result in a listing of all isbn numbers stored in the system.  
+    * A *[GET]* request to "*stocklocations*" should result in a listing of all geographic store locations.
+ * The "*isbns*" resource should have a single dynamic placeholder subresource representing an isbn number,
+    * A *[GET]* request to the dynamic placeholder subresource should provide details on a given book, identified by isbn number which serves as input parameter.
+    * A *[PUT]* request to the dynamic placeholder subresource should allow adding a new book to the system. All details on the book are passed as request body payload. (Note: This might look a bit peculiar to not use the value of the dynamic placeholder "isbn" for a subsequent mapping. That is ok here, because the required ISBN information is also contained in the body payload object. We do not want you to add any additional validation here, to keep things simple.)
+ * The dynamic placeholder resource should have a child resource "*comments*", representing comments for a given book, identified by isbn. The value of the parent placeholder resource determines which book is targeted.
+    * A *[GET]* request to the "*comments*" resource should result in a listing of all comments for the specified book. The value of the parent resource representing an isbn number servers as input parameter. The result should index comments by their id.
+    * A *[POST]* request to the "*comments*" resource should allow the creation of new comments. The id of the new comment is generated on server side and not required, however, again the parent placeholder resource encodes the isbn of the targeted book. The comment itself is to be transmitted as request body payload.
+    * A *[DELETE]* request to the "*comments*" resource should delete all comments for a given book, identified by the isbn number of the parent dynamic placeholder resource.
+ * The "*comments* resource should have a dynamic subresource representing a specific comment by id. It offers two methods: *[POST]* and *[DELETE]*.
+    * A *[POST]* request to specific comment should allow to alter the content of that comment. Target book and target comment are respectively identified by the dynamic resource itself and the corresponding grandparent placeholder resource. Similar to comment creation, the new comment content is tranmitted as request body payload.
+    * A *[DELETE]* request to specific comment should allow removal of an existing comment. Target book and target comment are respectively identified by the dynamic resource itself and the corresponding grandparent placeholder resource.
+ * The *"stocklocations"* resource shoud have a dynamic subresource representing a specific geographic location (city name).
+    * A *[GET]* request to a specific location should return the exact amount of book copies in stock for the given location, as a map indexed by isbn number. The path variable itself providing the target location can serve as argument for a corresponding method call.
+ * Finally, the dynamic resource representing a specific geographic location should itself have a dynamic subresource representing the stock for a given book at the given location.
+    * A *[GET]* request on this dynamic resource should return the amount of copies in stock for a book specified by isbn (the value of this placeholder resources) and stock location (the value of this resource's parent placeholder resource)
+    * A *[POST]* request on this dynamic resource should update the current amount of copies for a given book. Target location and isbn are likewise encoded by this placeholder resource and its parent placeholder resource. The new amount is provided as request body payload.

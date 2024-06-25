@@ -1,15 +1,17 @@
 # RESTify Study Docs
 
-Sources for experiment instructions
+Sources for experiment instructions. The markdown sources compile to four websites, one for each experiment group.
 
 ## Usage
 
+### Local deployment (single group)
+
  * Start server: ```mkdocs serve```
- * Access docs: [http://127.0.0.1:8000/~mschie3/restify/red](http://127.0.0.1:8000/~mschie3/restify/red) or [https://kartoffelquadrat.eu/mirror/red](https://kartoffelquadrat.eu/mirror/red)
+ * Access docs: [http://127.0.0.1:8000/~mschie3/restify/red](http://127.0.0.1:8000/~mschie3/restify/red)
 
-## Internals
+## Build and Deploy
 
-Deploy script iterates over colours and for each:
+The `deploy.sh` script iterates over colours and for each:
 
  * Places colour specific css themes to ```docs/stylesheets/extra.css```
  * Overrides task order in ```index.md```
@@ -22,6 +24,8 @@ Deploy script iterates over colours and for each:
    * Appends task1/2.md file by pointer to target app + disclaimer + app IF descr.
  * Builds
  * Deploys to server
+
+  > You can also use the deploy script to generate local static snapshots. The script produces four local websites site-red, site-green, site-blue, site-yellow.
 
 ## Other
 

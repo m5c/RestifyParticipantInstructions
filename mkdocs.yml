@@ -1,5 +1,6 @@
 site_name: McGill CS RESTify Experiment
 site_url: https://www.cs.mcgill.ca/~mschie3/restify
+use_directory_urls: false
 nav:
     - Welcome: index.md
     - Preliminaries: preliminaries.md

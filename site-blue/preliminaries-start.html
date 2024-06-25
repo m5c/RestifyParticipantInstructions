@@ -1,0 +1,728 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.cs.mcgill.ca/~mschie3/restify/preliminaries-start.html">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Preliminaries - McGill CS RESTify Experiment</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="mcgill" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preliminaries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="McGill CS RESTify Experiment" class="md-header__button md-logo" aria-label="McGill CS RESTify Experiment" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            McGill CS RESTify Experiment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preliminaries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="McGill CS RESTify Experiment" class="md-nav__button md-logo" aria-label="McGill CS RESTify Experiment" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    McGill CS RESTify Experiment
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="preliminaries.html" class="md-nav__link">
+        Preliminaries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task1.html" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task2.html" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="upload.html" class="md-nav__link">
+        Upload
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touchcore" class="md-nav__link">
+    TouchCORE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    IntelliJ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom" class="md-nav__link">
+    Zoom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source Code
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intellij-import-test" class="md-nav__link">
+    IntelliJ Import Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepared-models" class="md-nav__link">
+    Prepared Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepared Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touchcore-import-test" class="md-nav__link">
+    TouchCORE Import Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-illustration" class="md-nav__link">
+    Task Illustration
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Illustration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-zoo-application" class="md-nav__link">
+    The Zoo Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-zoo-rest-interface-description" class="md-nav__link">
+    The Zoo REST interface description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="preliminaries">Preliminaries</h1>
+<h2 id="software">Software</h2>
+<p>Let's first check that you have all required software installed on your machine.</p>
+<blockquote>
+<p>If you are not able to install the required software, you can still participate in the study. Please <a href="mailto:maximilian.schiedermeier@mcgill.ca">contact the P.I.</a> to schedule access to a lab computer.</p>
+</blockquote>
+<h3 id="java">Java</h3>
+<p>You will need Java, version <code>11.0.5</code>. Unfortunately it has to be <strong>exactly</strong> this version for compatibility with TouchCORE.</p>
+<ul>
+<li>Verify your java version with <code>java -version</code></li>
+<li>If the output is <strong>not exactly 11.0.5</strong>, install it:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Mac OS</label><label for="__tabbed_1_2">Linux</label><label for="__tabbed_1_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="../../../1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg">JDK 11.0.5 MacOS package</a>.</li>
+<li>Double click the downloaded <code>.pkg</code> file.</li>
+<li>Follow the install instructions.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="../../../1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz">JDK 11.0.5 Linux package</a>.</li>
+<li>Extract the file: <code>tar xvf *.tar.gz</code></li>
+<li><a href="https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html">Add the contained commands to your path</a>:<ul>
+<li>Set the JAVA_HOME and update your PATH in your <code>~/.bashrc</code> file:<ul>
+<li>Extend path: <code>PATH=$PATH:/wherever/you/extracted/it/jdk-.../bin/</code></li>
+<li>Set java home: <code>JAVA_HOME=/wherever/you/extracted/it/jdk-...</code></li>
+</ul>
+</li>
+<li>Open a new terminal or type: <code>source ~/.bashrc</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the JDK 11.0.5 <a href="../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi">MSI</a> or <a href="../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip">ZIP</a> installer.</li>
+<li>Double click the downloaded file.</li>
+<li>Follow the install instructions.</li>
+</ul>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>After installation</strong>, verify that <strong>11.0.5 is now the default installed version</strong>.<br />
+Type again: <code>java -version</code>, check the output.</p>
+</blockquote>
+<h3 id="maven">Maven</h3>
+<p>You will need the java build tool <em>Maven</em>.</p>
+<ul>
+<li>Test if your system has the <code>mvn</code> command.</li>
+<li>If missing, install it:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Mac OS</label><label for="__tabbed_2_2">Linux</label><label for="__tabbed_2_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Unless already installed, <a href="https://brew.sh/">get the <code>brew</code> package manager</a>.</li>
+<li>Install maven:<br />
+<code>brew install maven</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Use the <code>apt</code> package manager to install maven:<br />
+<code>sudo apt install maven</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="https://maven.apache.org/download.cgi">graphical install wizard</a>.</li>
+<li>Double click it and follow the instructions.</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="touchcore">TouchCORE</h3>
+<p>You need a special TouchCORE release, built for this study. Older TouchCORE versions are not compatible.</p>
+<ul>
+<li>Download the study release here: <a href="../../../touchcorestudyrelease/touchcore-study-release.zip">TouchCORE (RESTify Study / JAR)</a></li>
+<li>Extract the downloaded zip file.</li>
+</ul>
+<blockquote>
+<p>You <strong>can not</strong> use an older version of TouchCORE. The required features are only contained in the above version.</p>
+</blockquote>
+<ul>
+<li>Verify you can start it:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Mac/Linux + Intel/AMD CPU</label><label for="__tabbed_3_2">Mac + M1 CPU</label><label for="__tabbed_3_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>java -jar TouchCORE.jar</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>softwareupdate --install-rosetta</code> (only first time)<br />
+<code>java -jar TouchCORE.jar</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>java -jar TouchCORE.jar</code><br />
+ If the TouchCORE window shows black bars, or if mouse clicks are displaced from the cursor location, please set <em>Windows virtual pixel scaling</em> to <code>100%</code>. Then log out of Windows and log in again:<br />
+ TouchCORE with black bars:<br />
+<img alt="windows-black-bars" src="captures/windows-black-bars.png" /><br />
+ Windows settings to fix black bars and mouse displacement:<br />
+<img alt="windows-pixel-fix" src="captures/windows-pixel-fix.png" /></p>
+</div>
+</div>
+</div>
+<p>You should now see this:<br />
+<img alt="touchcore-start" src="captures/touchcore-start.png" /></p>
+<blockquote>
+<p>Should the TouchCORE window does not fit your screen, or should you wish to adjust the window dimensions, edit the file <code>Settings.txt</code> (in the TouchCORE directory) and adjust the lines: <code>DisplayWidth=...</code> and <code>DisplayHeight=...</code>. Fullscreen mode on M1-Macs is not reliable, do not use it if you have an M1-Mac.</p>
+</blockquote>
+<h3 id="intellij">IntelliJ</h3>
+<p>Any IDE can be used, but we strongly recommend IntelliJ. Also further instructions and guides on this page are exclusively for IntelliJ.</p>
+<ul>
+<li><a href="https://www.jetbrains.com/idea/download/">Download and install IntelliJ</a>.<ul>
+<li>The <em>community</em> version is sufficient.</li>
+<li>If desired you can also use the <em>ultimate</em> version (registration with mcgill email required).</li>
+</ul>
+</li>
+</ul>
+<h3 id="zoom">Zoom</h3>
+<p>You'll need zoom, to record your task activity. (*)<br />
+Full screen recordings should not reveal personal content. Whenever asked to record, please first close all irrelevant browser tabs and clean your desktop from personal files.</p>
+<blockquote>
+<p><strong>Important</strong>: We strongly recommend <strong>not to use a multi screen setup</strong>. It is too easy to forget about only one screen being captured! All you activity must be reflected in the recordings, this includes you working with the provided material, e.g. these instructions. If you have multiple screens we strongly recommend to either <strong>deactivate one screen</strong>, or <strong>enable the "mirror" option</strong> in your operation system (so they show the identical content).</p>
+</blockquote>
+<p>(*) You can use whatever software you want, as long as it captures your entire screen for the full duration of your task activity. We only recommend zoom for REB compliance reasons. E.g. on Mac there is the preinstalled software "Quicktime".</p>
+<ul>
+<li>No worries you can stay offline, Zoom is only required to record your screen to disk.</li>
+<li>Unless already installed, <a href="https://zoom.us/download">install zoom</a> now.</li>
+<li>Then try to record a short screencast, to test your setup:<ul>
+<li>Start a new meeting.<br />
+<img alt="zoom1" src="captures/zoom1.png" /></li>
+<li>Click the record button.<br />
+<img alt="zoom2a" src="captures/zoom2a.png" /></li>
+<li>Start to share your Desktop.<br />
+<img alt="zoom2b" src="captures/zoom2b.png" /></li>
+<li>Wait a few seconds</li>
+<li>End the zoom meeting</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Verify that your <em>Desktop</em> recording to file worked. Watch your test recording now!</strong></p>
+</blockquote>
+<h2 id="applications">Applications</h2>
+<p>This section describes how to obtain source code and prepared TouchCORE models for the study objects.</p>
+<h3 id="source-code">Source Code</h3>
+<p>For the upcoming two tasks you will need prepared source code to work on.  </p>
+<ul>
+<li>Prepare a dedicated folder for your tasks, e.g. on your Desktop.</li>
+<li>Clone these three repositories, but do not yet inspect their content:<ul>
+<li><a href="https://github.com/kartoffelquadrat/Zoo">The Zoo</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/Zoo.git</code></li>
+<li><a href="https://github.com/kartoffelquadrat/BookStoreInternals">The Book Store</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/BookStoreInternals.git</code></li>
+<li><a href="https://github.com/kartoffelquadrat/XoxInternals">Tic Tac Toe</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/XoxInternals.git</code></li>
+</ul>
+</li>
+<li>You should now have three new directories in your study folder:</li>
+<li>Finally, <strong>for each</strong> folder, verify you can build the code as is:<ul>
+<li>Open a terminal / command line in the project folder.</li>
+<li>Run: <code>mvn clean install</code></li>
+<li>Verify there are no error messages printed to screen.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>All code you are working with in this study is open source, and you are welcome to share and redistribute it, beyond the context of this study. However, whatever published should always reference and give credit to the original source and authors.</p>
+</blockquote>
+<h4 id="intellij-import-test">IntelliJ Import Test</h4>
+<p>Let's verify that you can open and run the test source code with IntelliJ:</p>
+<ul>
+<li>Start IntelliJ.</li>
+<li>Use the "<em>Open</em>" option to get to the selection dialogue:
+<img alt="open-1" src="../captures/intellij/open-1.png" /></li>
+<li>Select the cloned project root folder, then click the "<em>Open</em>" button:<br />
+<img alt="open-2" src="../captures/intellij/open-2.png" /></li>
+<li>Verify you can start the "Zoo". Open the <code>DesktopLauncher</code> class and click the green triangle, left of the code:<br />
+<img alt="legacylaunch" src="../captures/intellij/legacylaunch.png" /></li>
+<li>Verify there is sample zoo text output, no error messages.</li>
+<li>Close IntelliJ again.</li>
+</ul>
+<h3 id="prepared-models">Prepared Models</h3>
+<p>Throughout your tasks you will be working with the below TouchCORE model bundle.</p>
+<ul>
+<li>Download <a href="../../../studymodels/studymodels.zip">the model bundle</a>.</li>
+<li>Extract them all on your disk, e.g. your Desktop.</li>
+</ul>
+<h4 id="touchcore-import-test">TouchCORE Import Test</h4>
+<p>Let's verify that you can open the test model:</p>
+<ul>
+<li><a href="#touchcore">Launch TouchCORE</a></li>
+<li>Try to open the prepared <em>Zoo</em> model (and only the Zoo model!).</li>
+<li>Select the load icon.
+<img alt="loadicon" src="../captures/touchcoreui/folder.png" /></li>
+<li>Navigate to where you extracted the <code>zoo.zip</code> file.<ul>
+<li>Use the <em>Arrow Up</em> triangular icon to orient, if needed.</li>
+<li>Select the <code>zoo.core</code> file.</li>
+<li>Click the green "<em>Load</em>" button.<br />
+<img alt="loadcore" src="../captures/touchcoreui/loadcore.png" /></li>
+</ul>
+</li>
+<li>You should see this:
+<img alt="zooloaded" src="../captures/touchcoreui/zooloaded.png" /></li>
+<li>Close TouchCORE again.</li>
+</ul>
+<h2 id="task-illustration">Task Illustration</h2>
+<p>In both of your tasks you will convert an existing java application to a RESTful service. This activity is also called <em>RESTify</em> or <em>RESTification</em>.  </p>
+<ul>
+<li>A REST application is a service that exposes functionality over a a network protocol:<ul>
+<li>The service creates the illusion of offering all functionality through CRUD operations on resources.<br />
+This is a bit like file system access where you can <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate or <strong>D</strong>elete files.<br />
+However, access is not through a file system, but though the HTTP protocol.</li>
+<li>A resource is identified by its URL (*Unique Resource Location). It looks e.g. like this:<br />
+<code>http://127.0.0.1:8080/zoo/animals</code><ul>
+<li><code>http</code> specifies the protocol to reach this resource</li>
+<li><code>127.0.0.1:8080</code> sets physical location of the target machine and the port running the REST service.</li>
+<li><code>zoo/animals</code> is the location of a resource, offered by the running REST service.</li>
+</ul>
+</li>
+<li>A REST interface is always an abstraction of the actual implementation, and should not be confused with RMI (<em>Remote Method Invocation</em>) where existing methods are called as-they-are over network.</li>
+</ul>
+</li>
+<li>At the start of each task I will provide you with the tools for this process and illustrate the requests activity on a sample application, the <strong>Zoo</strong>.</li>
+</ul>
+<h3 id="the-zoo-application">The Zoo Application</h3>
+<p>The Zoo is a minimal java desktop application that offers some demo functionality, namely:</p>
+<ul>
+<li>Looking up the Zoo's opening hours.</li>
+<li>Looking up all names of Zoo animals.</li>
+<li>Looking up details for a specific animal, identified by name.</li>
+<li>Adding a new animal to the Zoo.</li>
+</ul>
+<p>The above functionality is all provided by a singleton class: <a href="https://kartoffelquadrat.github.io/Zoo/eu/kartoffelquadrat/zoo/Zoo.html"><code>Zoo</code></a>.  </p>
+<ul>
+<li>For convenience, here is a class diagram of the <code>Zoo</code> class:<br />
+<img alt="zoo" src="../captures/zoo-bl.png" /></li>
+<li>You can also inspect the <a href="https://github.com/kartoffelquadrat/Zoo/blob/master/src/main/java/eu/kartoffelquadrat/zoo/DesktopLauncher.java">DesktopLauncher</a>, to see how to invoke above methods.</li>
+<li>Finally you can also run the provided Zoo implementation as is, to see a demo of above functionality:<ul>
+<li>Open a terminal in your cloned Zoo project</li>
+<li>Type: <code>mvn clean package exec:java</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="the-zoo-rest-interface-description">The Zoo REST interface description</h3>
+<p>The RESTification of an application (e.g. the Zoo) requires an interface description. An interface description tells you:</p>
+<ul>
+<li>The expected arrangement of REST resources, and also their individual locations.</li>
+<li>Which methods (<code>Get</code>, <code>Put</code>, <code>Post</code>, <code>Delete</code>) are supported per resource.</li>
+<li>What happens when a REST resource  method was called, and how required parameters are provided.</li>
+</ul>
+<p>For example for the Zoo the interface description could look like this:  </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
