@@ -2,6 +2,8 @@
 
 Sources for experiment instructions. The markdown sources compile to four websites, one for each experiment group.
 
+ > **THIS VERSION IS A STATIC SNAPSHOT, CREATED FOR THE MODELS ARTIFACT EVALUATION. UNLESS YOU ARE A REVIEWER, PLEASE [ACCESS THE ORIGINAL ARTIFACT](https://github.com/m5c/RestifyParticipantInstructions)**
+
 ## Usage
 
 ### Local deployment (single group)
